@@ -1,0 +1,77 @@
+.contactsWidget {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    bottom: 50px;
+    right: 65px;
+    z-index: 10;
+}
+
+.widgetWindowClose {
+    z-index: -1;
+    opacity: 0;
+    transition: 0s ease;
+}
+
+.widgetWindow {
+    position: fixed;
+    max-width: 250px;
+    bottom: 125px;
+    right: 65px;
+    display: block;
+    background: #ffffff;
+    opacity: 1;
+    transition: 0.3s ease;
+    box-shadow: 0 0 20px 0 rgba(0,0,0,.3);
+    padding: 30px 20px 20px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+@media screen and (max-width: 414px) {
+    .contactsWidget {
+        right: 5px;
+        bottom: 30px;
+    }
+    .widgetWindow {
+        bottom: 105px;
+        right: 5px;
+        max-width: 220px;
+    }
+}
+
+.widgetButton {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: #00843e;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: 0.3s ease;
+    box-shadow: 0 0 20px 0 rgba(0,0,0,.3);
+}
+
+.widgetButtonOpen {
+    background: #ffffff;
+    transition: 0.3s ease;
+}
+
+.widgetButton img {
+    width: 30px;
+}
+
+.widgetTitle {
+    font-size: 24px;
+    font-weight: 600;
+    padding-bottom: 30px;
+}
+
+.widgetElementsWrapper {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}

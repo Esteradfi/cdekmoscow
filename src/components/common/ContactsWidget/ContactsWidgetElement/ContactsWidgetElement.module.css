@@ -1,0 +1,14 @@
+.contactsWidgetElement {
+    width: 25%;
+    text-decoration: none;
+}
+
+.contactsWidgetElement img {
+    width: 100%;
+}
+
+.contactName {
+    font-size: 0.75rem;
+    color: #000000;
+    padding-top: 10px;
+}
