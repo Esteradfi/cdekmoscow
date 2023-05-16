@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/cdekmoscow/static/css/main.c479ea53.css",
-    "main.js": "/cdekmoscow/static/js/main.6c8a7f05.js",
+    "main.css": "/cdekmoscow/static/css/main.09a810ed.css",
+    "main.js": "/cdekmoscow/static/js/main.cd6afd43.js",
     "static/media/cdek-logo.jpg": "/cdekmoscow/static/media/cdek-logo.e4fe0f9c6f8bc047a32a.jpg",
     "static/media/roboto-all-400-normal.woff": "/cdekmoscow/static/media/roboto-all-400-normal.c5d001fa922fa66a147f.woff",
     "static/media/roboto-latin-400-normal.woff2": "/cdekmoscow/static/media/roboto-latin-400-normal.b009a76ad6afe4ebd301.woff2",
@@ -15,14 +15,15 @@
     "static/media/roboto-greek-ext-400-normal.woff2": "/cdekmoscow/static/media/roboto-greek-ext-400-normal.169619821ea93019d1bb.woff2",
     "static/media/phone.svg": "/cdekmoscow/static/media/phone.f195712a1c1f532f26a86c6fd65c1c20.svg",
     "static/media/messenger.svg": "/cdekmoscow/static/media/messenger.76066b50fadf32971feedf496ffb35dd.svg",
+    "static/media/arrow-right.svg": "/cdekmoscow/static/media/arrow-right.7f794c9f8fb61acf8c71a7ffee099789.svg",
     "index.html": "/cdekmoscow/index.html",
     "static/media/burger.svg": "/cdekmoscow/static/media/burger.d187d7b6fdf71d1ae3d044fb191ba9bb.svg",
-    "static/media/close.svg": "/cdekmoscow/static/media/close.ae8de706cb336e0579adee6a13a9046e.svg",
-    "main.c479ea53.css.map": "/cdekmoscow/static/css/main.c479ea53.css.map",
-    "main.6c8a7f05.js.map": "/cdekmoscow/static/js/main.6c8a7f05.js.map"
+    "static/media/close.svg": "/cdekmoscow/static/media/close.4142a4c4da81aa532dbf96d1ff569509.svg",
+    "main.09a810ed.css.map": "/cdekmoscow/static/css/main.09a810ed.css.map",
+    "main.cd6afd43.js.map": "/cdekmoscow/static/js/main.cd6afd43.js.map"
   },
   "entrypoints": [
-    "static/css/main.c479ea53.css",
-    "static/js/main.6c8a7f05.js"
+    "static/css/main.09a810ed.css",
+    "static/js/main.cd6afd43.js"
   ]
 }
