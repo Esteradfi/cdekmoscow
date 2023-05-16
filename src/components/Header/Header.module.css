@@ -1,0 +1,80 @@
+.header {
+    box-shadow: 0 1px 3px rgba(0,0,0,0.30);
+    background: #ffffff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    font-size: 0.875rem;
+    z-index: 10;
+}
+
+@media screen and (max-width: 1023px) {
+    .header {
+        font-size: 0.72rem;
+    }
+}
+
+.headerWrapper {
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 90px;
+    z-index: 20;
+    background: #ffffff;
+}
+
+.headerLogo {
+    width: 130px;
+}
+
+.headerBurger {
+    display:  none;
+}
+
+.headerPanel, .headerPanelOpen {
+    display: none;
+}
+
+@media screen and (max-width: 767px) {
+    .headerContacts {
+        display: none;
+    }
+    .headerContactsOpen {
+        display: block;
+        font-size: 1.25rem;
+    }
+    .headerBurger {
+        display: flex;
+        width: 60px;
+        background: transparent;
+        padding: 0;
+        border: 0;
+        cursor: pointer;
+    }
+    .headerBurger img {
+        width: 100%;
+        transition: 0.3s ease;
+    }
+    .headerBurgerOpen img {
+        transform: rotate(-90deg);
+        transition: 0.3s ease;
+    }
+    .headerPanel, .headerPanelOpen {
+        display: block;
+    }
+    .headerPanel {
+        transform: translateY(-100%);
+    }
+    .headerPanelOpen {
+        transform: translateY(0);
+        animation: open 0.3s forwards;
+        padding: 10px;
+    }
+}
+
+@keyframes open {
+    0% {transform: translateY(-100%);}
+    100% {transform: translateY(0);}
+}
