@@ -3,9 +3,10 @@
     display: flex;
     flex-direction: column;
     align-items: flex-end;
-    bottom: 50px;
+    bottom: 250px;
     right: 65px;
     z-index: 10;
+    color: #1d1d1b;
 }
 
 .widgetWindowClose {
@@ -18,7 +19,7 @@
 .widgetWindow {
     position: fixed;
     max-width: 250px;
-    bottom: 125px;
+    bottom: 325px;
     right: 65px;
     display: block;
     background: #ffffff;
@@ -30,13 +31,11 @@
     text-align: center;
 }
 
-@media screen and (max-width: 1220px) {
+@media screen and (max-width: 1479px) {
     .contactsWidget {
         right: 15px;
-        bottom: 30px;
     }
     .widgetWindow {
-        bottom: 105px;
         right: 10px;
         max-width: 220px;
     }
@@ -48,6 +47,7 @@
     border-radius: 50%;
     background: #00843e;
     border: none;
+    outline: none;
     display: flex;
     justify-content: center;
     align-items: center;

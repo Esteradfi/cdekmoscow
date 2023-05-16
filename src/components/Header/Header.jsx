@@ -4,9 +4,9 @@ import burger from "./../../assets/icons/burger.svg";
 import {NavLink} from "react-router-dom";
 import Navbar from "./Navbar/Navbar";
 import {useDispatch, useSelector} from "react-redux";
-import {toggleBurger} from "../../redux/header-reducer";
+import {toggleBurger} from "../../redux/header-footer-reducer";
 const Header = (props) => {
-    let headerState = useSelector(state => state.header);
+    let headerState = useSelector(state => state.headerFooter);
     const dispatch = useDispatch();
 
     let toggleBurgerOpen = () => {

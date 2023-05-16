@@ -1,10 +1,19 @@
+html, body, #root {
+  height: 100%;
+}
+
 body {
   font-family: "Roboto", sans-serif;
+  margin: 0;
 }
 
 .container {
   max-width: 1200px;
   margin: 0 auto;
+}
+
+.section {
+  padding: 20px 0;
 }
 
 @media screen and (max-width: 1220px) {
@@ -15,11 +24,11 @@ body {
 
 a {
   text-decoration: none;
-  color: #000000;
+  color: #1d1d1b;
   transition: 0.3s ease;
 }
 
 a:hover {
-  color: #00843e;
+  color: #009b47;
   transition: 0.3s ease;
 }

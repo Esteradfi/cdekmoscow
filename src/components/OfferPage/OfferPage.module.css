@@ -1,0 +1,35 @@
+.offerPageWrapper {
+    max-width: 70%;
+    margin: 0 auto;
+}
+
+@media screen and (max-width: 767px){
+    .offerPageWrapper {
+        max-width: 100%;
+        width: 100%;
+    }
+}
+
+.offerPageItem {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #009b47;
+    border-radius: 16px;
+    padding: 30px 20px;
+    color: #ffffff;
+    text-align: left;
+}
+
+.offerPageItem:hover {
+    color: #ffffff;
+}
+
+.offerPageItem:not(:last-child) {
+    margin-bottom: 30px;
+}
+
+.offerPageItem img {
+    width: 20px;
+    margin-left: 10px;
+}

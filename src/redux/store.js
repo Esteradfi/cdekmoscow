@@ -1,12 +1,12 @@
 import {configureStore} from "@reduxjs/toolkit";
 import contactsWidgetReducer from "./contacts-widget-reducer";
 import {useDispatch} from "react-redux";
-import headerReducer from "./header-reducer";
+import headerFooterReducer from "./header-footer-reducer";
 
 export default configureStore({
     reducer: {
         contactsWidget: contactsWidgetReducer,
-        header: headerReducer,
+        headerFooter: headerFooterReducer,
     },
     devTools: true,
 })
