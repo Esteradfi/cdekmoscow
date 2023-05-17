@@ -14,11 +14,16 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: #009b47;
+    background: #00843e;
     border-radius: 16px;
     padding: 30px 20px;
     color: #ffffff;
     text-align: left;
+    transition: 0.3s ease;
+}
+
+.offerPageItem:hover {
+    background: #009b47;
 }
 
 .offerPageItem:hover {

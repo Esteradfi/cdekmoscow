@@ -1,0 +1,51 @@
+.aboutItem {
+    display: flex;
+    width: 48%;
+}
+
+.aboutItem:not(:last-child) {
+    padding-bottom: 20px;
+}
+
+.aboutItem:nth-child(9) {
+    padding-bottom: 0;
+}
+
+.aboutItemImage {
+    margin-right: 10px;
+    border-radius: 50%;
+    aspect-ratio: 1;
+    width: 80px;
+    height: 80px;
+}
+
+.aboutItemContent {
+    text-align: left;
+}
+
+.aboutItemTitle {
+    margin: 0;
+    padding: 10px 0;
+}
+
+.aboutItemText {
+    font-size: 1rem;
+}
+
+@media screen and (max-width: 841px) {
+    .aboutItem {
+        width: 100%;
+    }
+    .aboutItem:nth-child(9) {
+        padding-bottom: 20px;
+    }
+    .aboutItemText {
+        font-size: 0.875rem;
+    }
+}
+
+@media screen and (max-width: 368px) {
+    .aboutItemText {
+        font-size: 0.75rem;
+    }
+}

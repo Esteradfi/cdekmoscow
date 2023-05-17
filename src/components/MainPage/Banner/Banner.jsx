@@ -7,7 +7,7 @@ const Banner = (props) => {
             <div className={"container " + styles.bannerWrapper}>
                 <div className={styles.bannerContent}>
                     <div className={styles.bannerText}>
-                        CDEK - выбор <span className={styles.bannerTextGreen}>более чем трети</span> <span className={styles.bannerTextNowrap}>интернет-магазинов</span> России
+                        CDEK — выбор <span className={styles.bannerTextGreen}>более чем трети</span> <span className={styles.bannerTextNowrap}>интернет-магазинов</span> России
                     </div>
                     <NavLink to="/contract" className={styles.bannerLink}>
                         Оставить заявку
