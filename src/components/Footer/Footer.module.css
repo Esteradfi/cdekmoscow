@@ -44,7 +44,7 @@
     margin-bottom: 10px;
 }
 
-.footerRowItem:hover, .footerRowLink:hover {
+.footerRowItem:hover, .footerRowLink:hover, .footerRowText:hover {
     color: #ffffff;
 }
 

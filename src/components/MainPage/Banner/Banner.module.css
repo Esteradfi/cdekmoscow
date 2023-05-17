@@ -1,0 +1,68 @@
+.banner {
+    max-width: 1420px;
+    height: 570px;
+    margin: 0 auto;
+    background: no-repeat center center;
+    background-size: cover;
+    text-align: left;
+}
+
+.bannerWrapper {
+    position: relative;
+    height: 100%;
+}
+
+.bannerWrapper::after {
+    display: inline-block;
+    height: 100%;
+
+    vertical-align: middle;
+    content: "";
+}
+
+@media screen and (max-width: 414px) {
+    .banner {
+        height: 380px;
+        text-align: center;
+    }
+    .bannerWrapper {
+        background: rgba(255, 255, 255, 0.6);
+    }
+}
+
+.bannerContent {
+    display: inline-block;
+    vertical-align: middle;
+    max-width: 300px;
+}
+
+.bannerText {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.bannerTextGreen {
+    color: #009b47;
+}
+
+.bannerTextNowrap {
+    white-space: nowrap;
+}
+
+.bannerLink {
+    background: #00843e;
+    max-width: 300px;
+    width: 100%;
+    text-align: center;
+    display: block;
+    color: #ffffff;
+    border-radius: 4px;
+    padding: 20px 0;
+    transition: 0.3s ease;
+}
+
+.bannerLink:hover {
+    color: #ffffff;
+    background: #009b47;
+}
+

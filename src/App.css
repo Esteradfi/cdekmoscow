@@ -6,6 +6,6 @@
   grid-template-rows: 1fr auto;
 }
 
-.AppContent {
-
+main {
+  margin-top: 90px;
 }
