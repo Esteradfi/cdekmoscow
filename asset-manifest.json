@@ -1,10 +1,11 @@
 {
   "files": {
-    "main.css": "/cdekmoscow/static/css/main.fc451acb.css",
-    "main.js": "/cdekmoscow/static/js/main.5ee0f507.js",
+    "main.css": "/cdekmoscow/static/css/main.32e62679.css",
+    "main.js": "/cdekmoscow/static/js/main.fe250186.js",
     "static/media/cdek-logo.jpg": "/cdekmoscow/static/media/cdek-logo.e4fe0f9c6f8bc047a32a.jpg",
     "static/media/background.png": "/cdekmoscow/static/media/background.e2b04b083f42370d32ee.png",
     "static/media/roboto-all-400-normal.woff": "/cdekmoscow/static/media/roboto-all-400-normal.c5d001fa922fa66a147f.woff",
+    "static/media/integration.png": "/cdekmoscow/static/media/integration.72084590f40c2852a4ab.png",
     "static/media/roboto-latin-400-normal.woff2": "/cdekmoscow/static/media/roboto-latin-400-normal.b009a76ad6afe4ebd301.woff2",
     "static/media/roboto-cyrillic-ext-400-normal.woff2": "/cdekmoscow/static/media/roboto-cyrillic-ext-400-normal.804378952da8a10faae2.woff2",
     "static/media/roboto-latin-ext-400-normal.woff2": "/cdekmoscow/static/media/roboto-latin-ext-400-normal.861b791f9de857a6e7bc.woff2",
@@ -21,11 +22,11 @@
     "index.html": "/cdekmoscow/index.html",
     "static/media/burger.svg": "/cdekmoscow/static/media/burger.d187d7b6fdf71d1ae3d044fb191ba9bb.svg",
     "static/media/close.svg": "/cdekmoscow/static/media/close.4142a4c4da81aa532dbf96d1ff569509.svg",
-    "main.fc451acb.css.map": "/cdekmoscow/static/css/main.fc451acb.css.map",
-    "main.5ee0f507.js.map": "/cdekmoscow/static/js/main.5ee0f507.js.map"
+    "main.32e62679.css.map": "/cdekmoscow/static/css/main.32e62679.css.map",
+    "main.fe250186.js.map": "/cdekmoscow/static/js/main.fe250186.js.map"
   },
   "entrypoints": [
-    "static/css/main.fc451acb.css",
-    "static/js/main.5ee0f507.js"
+    "static/css/main.32e62679.css",
+    "static/js/main.fe250186.js"
   ]
 }
