@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/cdekmoscow/static/css/main.fee352d9.css",
-    "main.js": "/cdekmoscow/static/js/main.8018fafa.js",
+    "main.css": "/cdekmoscow/static/css/main.d128aee0.css",
+    "main.js": "/cdekmoscow/static/js/main.a1036c63.js",
     "static/media/cdek-logo.jpg": "/cdekmoscow/static/media/cdek-logo.e4fe0f9c6f8bc047a32a.jpg",
     "static/media/background.png": "/cdekmoscow/static/media/background.e2b04b083f42370d32ee.png",
     "static/media/roboto-all-400-normal.woff": "/cdekmoscow/static/media/roboto-all-400-normal.c5d001fa922fa66a147f.woff",
@@ -22,11 +22,11 @@
     "index.html": "/cdekmoscow/index.html",
     "static/media/burger.svg": "/cdekmoscow/static/media/burger.d187d7b6fdf71d1ae3d044fb191ba9bb.svg",
     "static/media/close.svg": "/cdekmoscow/static/media/close.4142a4c4da81aa532dbf96d1ff569509.svg",
-    "main.fee352d9.css.map": "/cdekmoscow/static/css/main.fee352d9.css.map",
-    "main.8018fafa.js.map": "/cdekmoscow/static/js/main.8018fafa.js.map"
+    "main.d128aee0.css.map": "/cdekmoscow/static/css/main.d128aee0.css.map",
+    "main.a1036c63.js.map": "/cdekmoscow/static/js/main.a1036c63.js.map"
   },
   "entrypoints": [
-    "static/css/main.fee352d9.css",
-    "static/js/main.8018fafa.js"
+    "static/css/main.d128aee0.css",
+    "static/js/main.a1036c63.js"
   ]
 }
