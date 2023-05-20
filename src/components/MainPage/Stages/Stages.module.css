@@ -1,0 +1,52 @@
+.stagesWrapper {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.stagesItem {
+    display: flex;
+    flex-direction: column;
+    max-width: 40%;
+}
+
+.stagesNumber {
+    font-size: 5rem;
+    color: #00843e;
+}
+
+.stagesText {
+    font-size: 1.25rem;
+    color: #1d1d1b;
+}
+
+.stagesLink {
+    background: #00843e;
+    max-width: 300px;
+    width: 100%;
+    text-align: center;
+    display: block;
+    color: #ffffff;
+    border-radius: 4px;
+    padding: 20px 0;
+    transition: 0.3s ease;
+}
+
+.stagesLink:hover {
+    color: #ffffff;
+    background: #009b47;
+}
+
+@media screen and (max-width: 767px) {
+    .stagesWrapper {
+        flex-direction: column;
+        align-items: center;
+    }
+    .stagesItem {
+        margin-bottom: 20px;
+        max-width: 100%;
+    }
+    .stagesLink {
+        max-width: 100%;
+    }
+}
