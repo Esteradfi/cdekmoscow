@@ -1,7 +1,9 @@
+import ArticleTitle from "../../common/AtricleTitle/ArticleTitle";
+
 const Slider = (props) => {
     return (
-        <article>
-
+        <article className={"container "}>
+            <ArticleTitle title={"Нам доверяют"} />
         </article>
     )
 }

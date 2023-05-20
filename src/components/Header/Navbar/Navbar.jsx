@@ -7,10 +7,7 @@ const Navbar = (props) => {
     return (
         <nav className={isOpen ? styles.navbarOpen : styles.navbar}>
             <NavLink to="/">
-                Преимущества
-            </NavLink>
-            <NavLink to="/">
-                Наши клиенты
+                Главная
             </NavLink>
             <NavLink to="/contract">
                 Заключить договор

@@ -49,5 +49,31 @@
 }
 
 .footerRowCenter {
+    margin-left: 7%;
+}
+
+.footerRowRight {
+    margin-right: 5%;
+}
+
+@media screen and (max-width: 1023px) {
+    .footerRowCenter {
+        margin-left: 10%;
+    }
+    .footerRowRight {
+        margin-right: 7%;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .footerRowCenter {
+        margin-left: 0;
+    }
+    .footerRowRight {
+        margin-right: 0;
+    }
+}
+
+.footerRowYear {
     margin-top: 10px;
 }

@@ -1,7 +1,9 @@
+import ArticleTitle from "../../common/AtricleTitle/ArticleTitle";
+
 const Stages = (props) => {
     return (
-        <article>
-
+        <article className={"container "}>
+            <ArticleTitle title={"Как заключить договор со CDEK?"} />
         </article>
     )
 }
