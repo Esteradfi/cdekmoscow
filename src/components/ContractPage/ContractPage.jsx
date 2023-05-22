@@ -34,10 +34,23 @@ const ContractPage = (props) => {
         <section className={"section "}>
             <article className="container ">
                 <form action="" method="" className={styles.contractForm}>
-                    <input onChange={onNewName} value={name} required type="text" autoComplete="name" placeholder="Ваше имя"/>
-                    <input onChange={onNewEmail} value={email} required type="email" placeholder="Ваш E-mail"/>
-                    <input onChange={onNewPhone} value={phone} required type="tel" autoComplete="tel" placeholder="Ваш телефон для связи"/>
-                    <textarea onChange={onNewComment} className={styles.contractTextarea} value={comment} name="" id="" cols="30" rows="10"></textarea>
+                    <label htmlFor="name" className={styles.contractLabel}>
+                        ФИО
+                    </label>
+                    <input name="name" id="name" onChange={onNewName} value={name} required type="text" autoComplete="name" placeholder="Ваше имя"/>
+                    <label htmlFor="email" className={styles.contractLabel}>
+                        E-mail
+                    </label>
+                    <input name="email" id="email" onChange={onNewEmail} value={email} required type="email" placeholder="Ваш E-mail"/>
+                    <label htmlFor="phone" className={styles.contractLabel}>
+                        Телефон
+                    </label>
+                    <input name="phone" id="phone" onChange={onNewPhone} value={phone} required type="tel" autoComplete="tel" placeholder="Ваш телефон для связи"/>
+                    <label htmlFor="comment" className={styles.contractLabel}>
+                        Комментарий
+                        <small className={styles.contractSmall}>(Не обязательно к заполнению)</small>
+                    </label>
+                    <textarea name="comment" id="comment" onChange={onNewComment} className={styles.contractTextarea} value={comment}></textarea>
                     <input className={styles.contractSubmit} type="submit"/>
                 </form>
             </article>
