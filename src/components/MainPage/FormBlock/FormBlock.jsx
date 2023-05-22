@@ -34,9 +34,9 @@ const FormBlock = (props) => {
                     Оставьте контакты, мы перезвоним вам и все расскажем.
                 </h3>
                 <form action="" method="" className={styles.form}>
-                    <input onChange={onNewName} value={name} className={styles.formInput} type="text" autoComplete="name" placeholder="Имя"/>
-                    <input onChange={onNewEmail} value={email} className={styles.formInput} type="email" placeholder="E-mail"/>
-                    <input onChange={onNewPhone} value={phone} className={styles.formInput} type="tel" autoComplete="tel" placeholder="Телефон"/>
+                    <input onChange={onNewName} value={name} className={styles.formInput} required type="text" autoComplete="name" placeholder="Имя"/>
+                    <input onChange={onNewEmail} value={email} className={styles.formInput} required type="email" placeholder="E-mail"/>
+                    <input onChange={onNewPhone} value={phone} className={styles.formInput} required type="tel" autoComplete="tel" placeholder="Телефон"/>
                     <input className={styles.formSubmit} type="submit"/>
                 </form>
                 <div className={styles.formBLockText}>

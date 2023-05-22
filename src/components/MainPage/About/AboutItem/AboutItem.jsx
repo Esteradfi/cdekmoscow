@@ -43,7 +43,7 @@ const AboutItem = (props) => {
 
     return (
         <div className={styles.aboutItem}>
-            <img className={styles.aboutItemImage} src={itemImage} alt="Картинка"/>
+            <img className={styles.aboutItemImage} src={itemImage} alt={state.name}/>
             <div className={styles.aboutItemContent}>
                 <h4 className={styles.aboutItemTitle}>{state.name}</h4>
                 <div className={styles.aboutItemText}>{state.description}</div>

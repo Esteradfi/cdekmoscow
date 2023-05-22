@@ -24,23 +24,12 @@
 .form input {
     width: 21%;
     border: 1px solid #e0e0e0;
-    border-radius: 4px;
-}
-
-.form input:focus {
-    outline: none;
 }
 
 @media screen and (max-width: 899px) {
     .form input {
         width: 20%;
     }
-}
-
-.formInput {
-    padding: 0 20px;
-    color: #1d1d1b;
-    font-size: 1rem;
 }
 
 .formSubmit {
@@ -81,7 +70,6 @@
     }
     .formInput {
         margin-bottom: 20px;
-        box-sizing: border-box;
     }
     .formBLockText, .formSubtitle {
         text-align: center;

@@ -1,0 +1,32 @@
+.contractForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.contractForm input, .contractForm textarea {
+    width: 60%;
+    margin-bottom: 30px;
+    border: 1px solid #1d1d1b;
+}
+
+.contractTextarea {
+    resize: vertical;
+}
+
+.contractSubmit {
+    background: #00843e;
+    color: #ffffff;
+    transition: 0.3s ease;
+    border: 0;
+}
+
+.contractSubmit:hover {
+    background: #009b47;
+}
+
+@media screen and (max-width: 767px) {
+    .contractForm input, .contractForm textarea {
+        width: 100%;
+    }
+}

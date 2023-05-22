@@ -38,7 +38,7 @@ const OfferItem = (props) => {
 
     return (
         <div className={styles.offerItem}>
-            <img className={styles.offerItemImage} src={itemImage} alt="Картинка"/>
+            <img className={styles.offerItemImage} src={itemImage} alt={state.name}/>
             <h4 className={styles.offerItemTitle}>{state.name}</h4>
             <div className={styles.offerItemText}>{state.description}</div>
         </div>

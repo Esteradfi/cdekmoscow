@@ -7,6 +7,8 @@ import MainPage from "./components/MainPage/MainPage";
 import CalcPage from "./components/CalcPage/CalcPage";
 import ContractPage from "./components/ContractPage/ContractPage";
 import OfferPage from "./components/OfferPage/OfferPage";
+import QuestionnairePage from "./components/QuestionnairePage/QuestionnairePage";
+import ScrollToTop from "./components/common/ScrollToTop/ScrollToTop";
 
 function App() {
   return (
@@ -14,12 +16,15 @@ function App() {
         <div className="AppContent">
             <Header />
             <main>
-                <Routes>
-                    <Route path="/" element={<MainPage />}/>
-                    <Route path="/calculator" element={<CalcPage />}/>
-                    <Route path="/contract" element={<ContractPage />}/>
-                    <Route path="/offer" element={<OfferPage />}/>
-                </Routes>
+                <ScrollToTop>
+                    <Routes>
+                        <Route path="/" element={<MainPage />}/>
+                        <Route path="/calculator" element={<CalcPage />}/>
+                        <Route path="/questionnaire" element={<QuestionnairePage />}/>
+                        <Route path="/contract" element={<ContractPage />}/>
+                        <Route path="/offer" element={<OfferPage />}/>
+                    </Routes>
+                </ScrollToTop>
             </main>
             <ContactsWidget />
         </div>

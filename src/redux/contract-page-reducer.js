@@ -1,11 +1,12 @@
 import {createSlice} from "@reduxjs/toolkit";
 
-export const mainPageFormSlice = createSlice({
-    name: "MainPage form",
+export const contractPageSlice = createSlice({
+    name: "ContractPage",
     initialState: {
         name: "",
         email: "",
         phone: "",
+        comment: "",
     },
     reducers: {
         updateName: (state, action) => {
@@ -16,9 +17,12 @@ export const mainPageFormSlice = createSlice({
         },
         updatePhone: (state, action) => {
             state.phone = action.payload;
+        },
+        updateComment: (state, action) => {
+            state.comment = action.payload;
         }
     }
 })
 
-export const { updateName, updateEmail, updatePhone } = mainPageFormSlice.actions;
-export default mainPageFormSlice.reducer;
+export const { updateName, updateEmail, updatePhone, updateComment } = contractPageSlice.actions;
+export default contractPageSlice.reducer;

@@ -5,6 +5,8 @@ import headerFooterReducer from "./header-footer-reducer";
 import aboutReducer from "./about-reducer";
 import offersReducer from "./offers-reducer";
 import mainPageFormReducer from "./main-page-form-reducer";
+import sliderReducer from "./slider-reducer";
+import contractPageReducer from "./contract-page-reducer";
 
 export default configureStore({
     reducer: {
@@ -12,7 +14,9 @@ export default configureStore({
         headerFooter: headerFooterReducer,
         about: aboutReducer,
         offers: offersReducer,
-        mainPageForm: mainPageFormReducer
+        mainPageForm: mainPageFormReducer,
+        slider: sliderReducer,
+        contractPage: contractPageReducer,
     },
     devTools: true,
 })

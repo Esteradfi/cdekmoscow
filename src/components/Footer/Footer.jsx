@@ -14,7 +14,7 @@ const Footer = (props) => {
 
     return (
         <footer className={styles.footer}>
-            <div className={"container " + styles.footerWrapper}>
+            <div className={"container "}>
                 <div className={styles.footerRow}>
                     <div className={styles.footerRowTitle + " " + styles.footerRowItem}>Контакты</div>
                     <div className={styles.footerRowItem + ' ' + styles.footerRowCenter}>

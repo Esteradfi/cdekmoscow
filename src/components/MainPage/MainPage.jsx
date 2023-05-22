@@ -4,8 +4,8 @@ import Offers from "./Offers/Offers";
 import Integration from "./Integration/Integration";
 import FormBlock from "./FormBlock/FormBlock";
 import Stages from "./Stages/Stages";
-import Slider from "./Slider/Slider";
 import styles from "./MainPage.module.css";
+import SliderBlock from "./SliderBlock/SliderBlock";
 
 const MainPage = (props) => {
     return (
@@ -16,7 +16,7 @@ const MainPage = (props) => {
             <Integration />
             <FormBlock />
             <Stages />
-            <Slider />
+            <SliderBlock />
         </section>
     )
 }

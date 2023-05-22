@@ -1,10 +1,9 @@
 .footer {
     background: #00843e;
     color: #ffffff;
-    grid-row-start: 2;
-    grid-row-end: 3;
     min-height: 100px;
     padding: 30px 0;
+    flex: 0 0 auto;
 }
 
 .footerRow {
@@ -20,6 +19,7 @@
 .footerHr {
     margin-top: 40px;
     margin-bottom: 10px;
+    border-color: #ffffff;
 }
 
 @media screen and (max-width: 767px) {

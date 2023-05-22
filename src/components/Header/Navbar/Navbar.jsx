@@ -12,6 +12,9 @@ const Navbar = (props) => {
             <NavLink to="/contract">
                 Заключить договор
             </NavLink>
+            <NavLink to="/questionnaire">
+                Заполнить анкету
+            </NavLink>
             <NavLink to="/calculator">
                 Рассчитать стоимость
             </NavLink>
