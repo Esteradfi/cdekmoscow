@@ -19,6 +19,10 @@ input:focus, textarea:focus {
     outline: none;
 }
 
+input[type="date" i] {
+    font-family: Roboto;
+}
+
 .container {
     max-width: 1200px;
     overflow-x: hidden;
@@ -50,4 +54,119 @@ a:hover {
 ::placeholder {
     color: #9f9f9f;
     font-size: 0.875rem;
+}
+
+.verticalForm {
+    margin: 0 auto;
+    width: 60%;
+}
+
+.verticalLabel {
+    color: #1d1d1b;
+    text-align: left;
+    display: flex;
+    margin-bottom: 10px;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: left;
+    font-size: 1.125rem;
+    letter-spacing: 0.05rem;
+}
+
+.verticalSmall {
+    font-size: 0.875rem;
+    margin-top: 5px;
+}
+
+.verticalInput, .verticalTextarea {
+    width: 100%;
+    margin-bottom: 30px;
+    border: 1px solid #1d1d1b;
+}
+
+.verticalTextarea {
+    font-size: Roboto;
+    resize: vertical;
+    min-height: 120px;
+}
+
+.verticalSubmit {
+    background: #00843e;
+    width: 100%;
+    color: #ffffff;
+    transition: 0.3s ease;
+    border: 0;
+    outline: none;
+    cursor: pointer;
+    height: 60px;
+}
+
+.verticalSubmit:hover {
+    background: #009b47;
+}
+
+.inputsGroup {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 30px;
+}
+
+.custom-radio {
+    display: flex;
+    align-items: center;
+}
+
+.custom-radio>input {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+}
+
+.custom-radio>.custom-radio-span::before {
+    content: '';
+    display: inline-block;
+    width: 1.3em;
+    height: 1.3em;
+    flex-shrink: 0;
+    flex-grow: 0;
+    border: 1px solid #1d1d1b;
+    border-radius: 100%;
+    margin-right: 0.5em;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 50% 50%;
+}
+
+.custom-radio>input:checked+.custom-radio-span::before {
+    border-color: transparent;
+    opacity: 1;
+    background-color: #00843e;
+    background-position: center;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%23fff' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26 2.974 7.25 8 2.193z'/%3e%3c/svg%3e");
+}
+
+.custom-radio:not(:last-child) {
+    margin-bottom: 10px;
+}
+
+.horizontalFormSpan {
+    padding-bottom: 2px;
+}
+
+.visibleVerticalInput {
+    display: block;
+}
+
+.hiddenVerticalInput {
+    display: none;
+}
+
+@media screen and (max-width: 767px) {
+    .verticalForm {
+        width: 100%;
+    }
+    .verticalSmall {
+        margin-left: 0;
+    }
 }

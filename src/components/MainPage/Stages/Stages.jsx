@@ -32,7 +32,7 @@ const Stages = (props) => {
                     </div>
                 </div>
             </div>
-            <NavLink className={styles.stagesLink} to="/contract">
+            <NavLink className={styles.stagesLink} to="/questionnaire">
                 Заполнить анкету
             </NavLink>
         </article>

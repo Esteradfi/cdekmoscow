@@ -9,17 +9,17 @@ const FormBlock = (props) => {
     let phone = useSelector(state => state.mainPageForm.phone);
     let dispatch = useDispatch();
 
-    let onNewName = (e) => {
+    const onNewName = (e) => {
         let newName = e.target.value;
         dispatch(updateName(newName));
     }
 
-    let onNewEmail = (e) => {
+    const onNewEmail = (e) => {
         let newEmail = e.target.value;
         dispatch(updateEmail(newEmail));
     }
 
-    let onNewPhone = (e) => {
+    const onNewPhone = (e) => {
         let newPhone = e.target.value;
         dispatch(updatePhone(newPhone));
     }

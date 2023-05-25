@@ -9,7 +9,7 @@ const Header = (props) => {
     let headerState = useSelector(state => state.headerFooter);
     const dispatch = useDispatch();
 
-    let toggleBurgerOpen = () => {
+    const toggleBurgerOpen = () => {
         dispatch(toggleBurger(headerState.isOpen));
     }
 

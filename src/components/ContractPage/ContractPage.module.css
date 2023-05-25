@@ -1,48 +1,8 @@
-.contractForm {
-    margin: 0 auto;
-    width: 60%;
+.contractParagraph {
+    margin-top: 30px;
+    margin-bottom: 0;
 }
 
-.contractLabel {
+.contractParagraph a {
     color: #00843e;
-    margin-bottom: 10px;
-    display: flex;
-    justify-content: left;
-    align-items: center;
-    font-size: 1.125rem;
-    letter-spacing: 0.05rem;
-}
-
-.contractSmall {
-    font-size: 0.875rem;
-    margin-left: 10px;
-}
-
-.contractForm input, .contractTextarea {
-    width: 100%;
-    margin-bottom: 30px;
-    border: 1px solid #1d1d1b;
-}
-
-.contractTextarea {
-    resize: vertical;
-    min-height: 120px;
-}
-
-.contractSubmit {
-    background: #00843e;
-    color: #ffffff;
-    transition: 0.3s ease;
-    border: 0;
-    cursor: pointer;
-}
-
-.contractSubmit:hover {
-    background: #009b47;
-}
-
-@media screen and (max-width: 767px) {
-    .contractForm {
-        width: 100%;
-    }
 }
