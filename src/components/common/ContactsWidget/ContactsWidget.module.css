@@ -19,7 +19,7 @@
 .widgetWindow {
     position: fixed;
     max-width: 275px;
-    bottom: 325px;
+    bottom: 275px;
     right: 65px;
     display: block;
     background: #ffffff;

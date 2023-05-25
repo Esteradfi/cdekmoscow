@@ -8,6 +8,7 @@ import mainPageFormReducer from "./main-page-form-reducer";
 import sliderReducer from "./slider-reducer";
 import contractPageReducer from "./contract-page-reducer";
 import questionnairePageReducer from "./questionnaire-page-reducer";
+import calcReducer from "./calc-reducer";
 
 export default configureStore({
     reducer: {
@@ -18,7 +19,8 @@ export default configureStore({
         mainPageForm: mainPageFormReducer,
         slider: sliderReducer,
         contractPage: contractPageReducer,
-        questionnairePage: questionnairePageReducer
+        questionnairePage: questionnairePageReducer,
+        calc: calcReducer,
     },
     devTools: true,
 })
