@@ -1,0 +1,11 @@
+.searchResultItem {
+    cursor: pointer;
+    transition: 0.3s ease;
+    width: 100%;
+    padding-left: 5px;
+}
+
+.searchResultItem:hover {
+    background: #00843e;
+    color: #ffffff;
+}

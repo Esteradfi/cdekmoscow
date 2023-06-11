@@ -9,10 +9,12 @@ import ContractPage from "./components/ContractPage/ContractPage";
 import OfferPage from "./components/OfferPage/OfferPage";
 import QuestionnairePage from "./components/QuestionnairePage/QuestionnairePage";
 import ScrollToTop from "./components/common/ScrollToTop/ScrollToTop";
+import {useSelector} from "react-redux";
 
 function App() {
+    let tariffsIsOpen = useSelector(state => state.calc.tariffsIsOpen);
   return (
-    <div className="App">
+    <div className={tariffsIsOpen ? "App App-no-scroll" : "App"}>
         <div className="AppContent">
             <Header />
             <main>
