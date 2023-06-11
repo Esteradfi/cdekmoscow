@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/cdekmoscow/static/css/main.a2170f41.css",
-    "main.js": "/cdekmoscow/static/js/main.2c6bb35f.js",
+    "main.css": "/cdekmoscow/static/css/main.f9799b50.css",
+    "main.js": "/cdekmoscow/static/js/main.e411d896.js",
     "static/media/cdek-logo.jpg": "/cdekmoscow/static/media/cdek-logo.e4fe0f9c6f8bc047a32a.jpg",
     "static/media/background.png": "/cdekmoscow/static/media/background.e2b04b083f42370d32ee.png",
     "static/media/roboto-all-400-normal.woff": "/cdekmoscow/static/media/roboto-all-400-normal.c5d001fa922fa66a147f.woff",
@@ -21,14 +21,15 @@
     "static/media/messenger.svg": "/cdekmoscow/static/media/messenger.76066b50fadf32971feedf496ffb35dd.svg",
     "index.html": "/cdekmoscow/index.html",
     "static/media/arrow-right.svg": "/cdekmoscow/static/media/arrow-right.7f794c9f8fb61acf8c71a7ffee099789.svg",
+    "static/media/preloader.svg": "/cdekmoscow/static/media/preloader.c7fb60a2f3090c691dcd065eb3d3f521.svg",
     "static/media/burger.svg": "/cdekmoscow/static/media/burger.d187d7b6fdf71d1ae3d044fb191ba9bb.svg",
     "static/media/close.svg": "/cdekmoscow/static/media/close.4142a4c4da81aa532dbf96d1ff569509.svg",
     "static/media/switch-points.svg": "/cdekmoscow/static/media/switch-points.cce79abd748c17877b0dfd181eedf367.svg",
-    "main.a2170f41.css.map": "/cdekmoscow/static/css/main.a2170f41.css.map",
-    "main.2c6bb35f.js.map": "/cdekmoscow/static/js/main.2c6bb35f.js.map"
+    "main.f9799b50.css.map": "/cdekmoscow/static/css/main.f9799b50.css.map",
+    "main.e411d896.js.map": "/cdekmoscow/static/js/main.e411d896.js.map"
   },
   "entrypoints": [
-    "static/css/main.a2170f41.css",
-    "static/js/main.2c6bb35f.js"
+    "static/css/main.f9799b50.css",
+    "static/js/main.e411d896.js"
   ]
 }
