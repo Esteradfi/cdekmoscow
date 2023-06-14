@@ -14,18 +14,25 @@ import {
     calcDeliveryCostThunk,
     updateFromLocation,
     updateToLocation,
-    updateSearchResultsFromLocation, updateSearchResultsToLocation, changeIsFetching
+    updateSearchResultsFromLocation, updateSearchResultsToLocation, changeIsFetching, changeTariffsIsOpen
 } from "../../redux/calc-reducer";
-import {createRef, useEffect} from "react";
+import {useEffect} from "react";
 import FromLocationItem from "./FromLocationItem/FromLocationItem";
 import ToLocationItem from "./ToLocationItem/ToLocationItem";
 import Preloader from "../common/Preloader/Preloader";
 import TariffsPopup from "./TariffsPopup/TariffsPopup";
+import {useForm} from "react-hook-form";
 
 const CalcPage = (props) => {
     let calcState = useSelector(state => state.calc);
     let dispatch = useDispatch();
     let cities = calcState.cities;
+
+    const {
+        register,
+        formState: { errors },
+        handleSubmit
+    } = useForm()
 
     const changeIsFetchingState = (change) => {
         dispatch(changeIsFetching(change));
@@ -56,12 +63,14 @@ const CalcPage = (props) => {
     const onNewFromLocationName = (e) => {
         let newFromLocationName = e.target.value;
         let results = searchCities(newFromLocationName);
+        dispatch(updateFromLocation(null));
         dispatch(updateSearchResultsFromLocation(results.length < 10 ? results : results.splice(0, 10)));
         dispatch(updateFromLocationName(newFromLocationName));
     }
     const onNewToLocationName = (e) => {
         let newToLocationName = e.target.value;
         let results = searchCities(newToLocationName);
+        dispatch(updateToLocation(null));
         dispatch(updateSearchResultsToLocation(results.length < 10 ? results : results.splice(0, 10)));
         dispatch(updateToLocationName(newToLocationName));
     }
@@ -104,7 +113,7 @@ const CalcPage = (props) => {
     }
 
     //Запрос на рассчёт доставки
-    const clickCalcDeliveryCost = () => {
+    const calcDeliveryCost = () => {
         let date = +new Date();
         let data = {
             type: 1,
@@ -131,25 +140,33 @@ const CalcPage = (props) => {
         changeIsFetchingState(true);
     }
 
+    const onTariffsClose = () => {
+        dispatch(changeTariffsIsOpen(false));
+    }
+
     return (
         <section className={"section"} onClick={resetResults}>
-            <div className={calcState.isFetching || calcState.tariffsIsOpen ? styles.calcOverlay : null}></div>
+            <div onClick={calcState.tariffsIsOpen ? onTariffsClose : null}
+                 className={calcState.isFetching ? styles.calcOverlay
+                     : calcState.tariffsIsOpen ? styles.calcOverlay + " " + styles.calcOverlayButton
+                         : null}></div>
             {calcState.isFetching && <Preloader/>}
-            {calcState.tariffsIsOpen && <TariffsPopup state={calcState} dispatch={dispatch} />}
+            {calcState.tariffsIsOpen &&
+                <TariffsPopup state={calcState} dispatch={dispatch} onTariffsClose={onTariffsClose}/>}
             <article className={"container "}>
                 <h1 className={styles.articleTitle}>Калькулятор стоимости доставки</h1>
-                <form className={styles.calcForm} action="" method="">
+                <form className={styles.calcForm} onSubmit={handleSubmit(calcDeliveryCost)}>
                     <div className={styles.calcHorizontalGroup}>
                         <div className={"verticalLabel " + styles.calcLabel}>
                             Откуда *
                             <input className={styles.calcLongInput} onChange={onNewFromLocationName}
                                    value={calcState.fromLocationName} type="text" required
-                                   autoComplete="off"
+                                   autoComplete="off" minLength="10"
                                    placeholder="Город отправитель"/>
                             <div className={styles.searchResultsWrapper}>
                                 <div className={styles.searchResults}>{fromLocationItems}</div>
                             </div>
-                            <span className={styles.calcHelp}>Начните вводить и выберете из списка</span>
+                            <span className={styles.calcHelp}>Начните вводить и ВЫБЕРИТЕ из списка</span>
                         </div>
                         <div className={styles.calcSwitchBlock}>
                             <img src={switchImage} onClick={switchLocations} alt="Поменять местами"/>
@@ -159,11 +176,12 @@ const CalcPage = (props) => {
                             <input className={styles.calcLongInput} onChange={onNewToLocationName}
                                    autoComplete="off"
                                    value={calcState.toLocationName} type="text" required
+                                   minLength="10"
                                    placeholder="Город получатель"/>
                             <div className={styles.searchResultsWrapper}>
                                 <div className={styles.searchResults}>{toLocationItems}</div>
                             </div>
-                            <span className={styles.calcHelp}>Начните вводить и выберете из списка</span>
+                            <span className={styles.calcHelp}>Начните вводить и ВЫБЕРИТЕ из списка</span>
                         </div>
                     </div>
                     <div>
@@ -215,8 +233,7 @@ const CalcPage = (props) => {
                                placeholder="Объявленная стоимость, руб"/>
                     </label>
                     <div className={styles.calcSubmitGroup}>
-                        <input className={"verticalSubmit " + styles.calcSubmit} type="button"
-                               onClick={clickCalcDeliveryCost}
+                        <input className={"verticalSubmit " + styles.calcSubmit} type="submit"
                                value="Рассчитать стоимость"/>
                         <div>Не является офертой</div>
                     </div>

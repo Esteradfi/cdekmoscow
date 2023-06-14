@@ -11,6 +11,11 @@ export const calcDeliveryCostThunk = createAsyncThunk(
             return response.data;
         } catch (err) {
             console.error('Failed to fetch tariffs:', err);
+            if (err.response.status === 400) {
+                alert(`Ошибка ${err.response.status}: Проверьте правильность введённых данных.`);
+            } else if (err.response.status === 429) {
+                alert(`Ошибка ${err.response.status}: Превышен лимит запросов на сервер. Подождите минуту.`);
+            }
         }
     }
 )
@@ -45,7 +50,7 @@ export const calcSlice = createSlice({
         searchResultsToLocation: [],
         tariffsList: [],
         tariffsIsOpen: false,
-        insuranceCost: 0
+        insuranceCost: 0,
     },
     reducers: {
         updateFromLocationName: (state, action) => {
@@ -94,10 +99,12 @@ export const calcSlice = createSlice({
                 state.cities = action.payload;
             })
             .addCase(calcDeliveryCostThunk.fulfilled, (state, action) => {
-                state.tariffsList = action.payload.tariff_codes;
-                state.insuranceCost = action.payload.insurance_cost;                ;
                 state.isFetching = false;
-                state.tariffsIsOpen = true;
+                if (action.payload) {
+                    state.tariffsList = action.payload.tariff_codes;
+                    state.insuranceCost = action.payload.insurance_cost;
+                    state.tariffsIsOpen = true;
+                }
             })
     }
 })

@@ -12,7 +12,7 @@ const FromLocationItem = (props) => {
 
   return (
       <div onClick={onNewFromLocation} className={styles.searchResultItem}>
-          {state.city + ", " + state.region + ", " + state.country}
+          {state.city + ", " + (state.region ? state.region : state.country) + ", " + state.country}
       </div>
   )
 }
