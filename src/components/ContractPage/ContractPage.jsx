@@ -1,5 +1,5 @@
 import {useDispatch, useSelector} from "react-redux";
-import {updateComment, updateEmail, updateName, updatePhone} from "../../redux/contract-page-reducer";
+import {updateComment, updateEmail, updateName, updatePhone, changeIsAgree} from "../../redux/contract-page-reducer";
 import styles from "./ContractPage.module.css";
 
 
@@ -9,6 +9,7 @@ const ContractPage = (props) => {
     let email = useSelector(state => state.contractPage.email);
     let phone = useSelector(state => state.contractPage.phone);
     let comment = useSelector(state => state.contractPage.comment);
+    let isAgree = useSelector(state => state.contractPage.isAgree);
     
     const onNewComment = (e) => {
         let newComment = e.target.value;
@@ -28,6 +29,10 @@ const ContractPage = (props) => {
     const onNewName = (e) => {
         let newName = e.target.value;
         dispatch(updateName(newName));
+    }
+
+    const clickChangeIsAgree = () => {
+        dispatch(changeIsAgree(isAgree));
     }
 
     return (
@@ -51,6 +56,11 @@ const ContractPage = (props) => {
                         <small className={"verticalSmall"}>(Не обязательно к заполнению)</small>
                     </label>
                     <textarea name="comment" id="comment" onChange={onNewComment} className={"verticalTextarea"} value={comment}></textarea>
+                    <label htmlFor="isAgree" className="custom-checkboxes" onClick={clickChangeIsAgree}>
+                        <input name="isAgree" id="isAgree" type="checkbox" required />
+                        <span className="custom-checkboxes-span"></span>
+                        <span className="horizontalFormSpan">Согласие на обработку персональных данных</span>
+                    </label>
                     <input className={"verticalSubmit"} type="submit"/>
                 </form>
                 <p className={styles.contractParagraph}>

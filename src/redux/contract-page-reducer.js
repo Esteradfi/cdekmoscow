@@ -7,6 +7,7 @@ export const contractPageSlice = createSlice({
         email: "",
         phone: "",
         comment: "",
+        isAgree: false
     },
     reducers: {
         updateName: (state, action) => {
@@ -20,9 +21,12 @@ export const contractPageSlice = createSlice({
         },
         updateComment: (state, action) => {
             state.comment = action.payload;
+        },
+        changeIsAgree: (state, action) => {
+            state.isAgree = !action.payload;
         }
     }
 })
 
-export const { updateName, updateEmail, updatePhone, updateComment } = contractPageSlice.actions;
+export const { updateName, updateEmail, updatePhone, updateComment, changeIsAgree } = contractPageSlice.actions;
 export default contractPageSlice.reducer;

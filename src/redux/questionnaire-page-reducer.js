@@ -19,6 +19,7 @@ export const questionnairePageSlice = createSlice({
         city: "",
         isWebStore: false,
         webStore: "",
+        isAgree: false,
     },
     reducers: {
         updateName: (state, action) => {
@@ -69,6 +70,9 @@ export const questionnairePageSlice = createSlice({
         updateWebStore: (state, action) => {
             state.webStore = action.payload;
         },
+        changeIsAgree: (state, action) => {
+            state.isAgree = !action.payload;
+        }
     }
 })
 
@@ -88,6 +92,7 @@ export const {
     updatePointAddress,
     updateCity,
     updateIsWebStore,
-    updateWebStore
+    updateWebStore,
+    changeIsAgree,
 } = questionnairePageSlice.actions;
 export default questionnairePageSlice.reducer;

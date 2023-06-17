@@ -7,7 +7,7 @@ import {
     updateEmail, updateInn, updateIsWebStore, updateLegalAddress,
     updateName,
     updateOrganizationName,
-    updatePhone, updatePointAddress, updateWebStore
+    updatePhone, updatePointAddress, updateWebStore, changeIsAgree
 } from "../../redux/questionnaire-page-reducer";
 
 
@@ -29,6 +29,7 @@ const QuestionnairePage = (props) => {
     let city = questionnaireState.city;
     let isWebStore = questionnaireState.isWebStore;
     let webStore = questionnaireState.webStore;
+    let isAgree = questionnaireState.isAgree;
 
     let dispatch = useDispatch();
 
@@ -95,6 +96,10 @@ const QuestionnairePage = (props) => {
     const onNewName = (e) => {
         let newName = e.target.value;
         dispatch(updateName(newName));
+    }
+
+    const clickChangeIsAgree = () => {
+        dispatch(changeIsAgree(isAgree));
     }
 
     return (
@@ -181,6 +186,11 @@ const QuestionnairePage = (props) => {
                         </label>
                         <input name="webStore" id="webStore" onChange={onNewWebStore} value={webStore} className={"verticalInput"} required type="url" placeholder="Ссылка на ваш интернет-магазин"/>
                     </div>
+                    <label htmlFor="isAgree" className="custom-checkboxes" onClick={clickChangeIsAgree}>
+                        <input name="isAgree" id="isAgree" type="checkbox" required />
+                        <span className="custom-checkboxes-span"></span>
+                        <span className="horizontalFormSpan">Согласие на обработку персональных данных</span>
+                    </label>
                     <input className={"verticalSubmit"} type="submit"/>
                 </form>
             </article>

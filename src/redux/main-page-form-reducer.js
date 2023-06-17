@@ -6,6 +6,7 @@ export const mainPageFormSlice = createSlice({
         name: "",
         email: "",
         phone: "",
+        isAgree: false
     },
     reducers: {
         updateName: (state, action) => {
@@ -16,9 +17,12 @@ export const mainPageFormSlice = createSlice({
         },
         updatePhone: (state, action) => {
             state.phone = action.payload;
+        },
+        changeIsAgree: (state, action) => {
+            state.isAgree = !action.payload;
         }
     }
 })
 
-export const { updateName, updateEmail, updatePhone } = mainPageFormSlice.actions;
+export const { updateName, updateEmail, updatePhone, changeIsAgree } = mainPageFormSlice.actions;
 export default mainPageFormSlice.reducer;
