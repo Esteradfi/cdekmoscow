@@ -56,11 +56,13 @@ const ContractPage = (props) => {
                         <small className={"verticalSmall"}>(Не обязательно к заполнению)</small>
                     </label>
                     <textarea name="comment" id="comment" onChange={onNewComment} className={"verticalTextarea"} value={comment}></textarea>
-                    <label htmlFor="isAgree" className="custom-checkboxes" onClick={clickChangeIsAgree}>
-                        <input name="isAgree" id="isAgree" type="checkbox" required />
-                        <span className="custom-checkboxes-span"></span>
-                        <span className="horizontalFormSpan">Согласие на обработку персональных данных</span>
-                    </label>
+                    <div className={styles.checkboxBlock}>
+                        <label htmlFor="isAgree" className="custom-checkboxes" onClick={clickChangeIsAgree}>
+                            <input name="isAgree" id="isAgree" type="checkbox" required />
+                            <span className="custom-checkboxes-span"></span>
+                            <span className="horizontalFormSpan">Согласие на обработку персональных данных</span>
+                        </label>
+                    </div>
                     <input className={"verticalSubmit"} type="submit"/>
                 </form>
                 <p className={styles.contractParagraph}>

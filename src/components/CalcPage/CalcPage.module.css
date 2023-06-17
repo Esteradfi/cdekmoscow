@@ -83,17 +83,15 @@
     font-size: 0.875rem;
     color: #7e7e7e;
     width: 100%;
+    letter-spacing: 0.05rem;
 }
 
 .calcShortInput {
     outline: none;
     border: 1px solid #1d1d1b;
     margin-top: 10px;
+    margin-bottom: 10px;
     width: 100%;
-}
-
-.calcSingleInput {
-    margin-bottom: 0;
 }
 
 .calcSubmitGroup {

@@ -123,6 +123,7 @@ a:hover {
     position: absolute;
     z-index: -1;
     opacity: 0;
+    width: 0 !important;
 }
 
 .custom-radio>.custom-radio-span::before, .custom-checkboxes>.custom-checkboxes-span::before {

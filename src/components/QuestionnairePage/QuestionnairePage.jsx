@@ -9,6 +9,7 @@ import {
     updateOrganizationName,
     updatePhone, updatePointAddress, updateWebStore, changeIsAgree
 } from "../../redux/questionnaire-page-reducer";
+import styles from "./QuestionnairePage.module.css";
 
 
 const QuestionnairePage = (props) => {
@@ -186,11 +187,13 @@ const QuestionnairePage = (props) => {
                         </label>
                         <input name="webStore" id="webStore" onChange={onNewWebStore} value={webStore} className={"verticalInput"} required type="url" placeholder="Ссылка на ваш интернет-магазин"/>
                     </div>
-                    <label htmlFor="isAgree" className="custom-checkboxes" onClick={clickChangeIsAgree}>
-                        <input name="isAgree" id="isAgree" type="checkbox" required />
-                        <span className="custom-checkboxes-span"></span>
-                        <span className="horizontalFormSpan">Согласие на обработку персональных данных</span>
-                    </label>
+                    <div className={styles.checkboxBlock}>
+                        <label htmlFor="isAgree" className="custom-checkboxes" onClick={clickChangeIsAgree}>
+                            <input name="isAgree" id="isAgree" type="checkbox" required />
+                            <span className="custom-checkboxes-span"></span>
+                            <span className="horizontalFormSpan">Согласие на обработку персональных данных</span>
+                        </label>
+                    </div>
                     <input className={"verticalSubmit"} type="submit"/>
                 </form>
             </article>

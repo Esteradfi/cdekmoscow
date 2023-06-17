@@ -75,24 +75,29 @@ const CalcPage = (props) => {
         dispatch(updateToLocationName(newToLocationName));
     }
     const onNewLength = (e) => {
-        let newLength = e.target.value < 0 ? 0 : e.target.value;
-        dispatch(updateLength(newLength));
+        let newValueInt = Number.isInteger(+e.target.value) ? e.target.value : Math.ceil(+e.target.value);
+        let newValue = newValueInt.length === 0 ? '' : newValueInt < 1 ? 1 : newValueInt;
+        dispatch(updateLength(newValue));
     }
     const onNewWidth = (e) => {
-        let newWidth = e.target.value < 0 ? 0 : e.target.value;
-        dispatch(updateWidth(newWidth));
+        let newValueInt = Number.isInteger(+e.target.value) ? e.target.value : Math.ceil(+e.target.value);
+        let newValue = newValueInt.length === 0 ? '' : newValueInt < 1 ? 1 : newValueInt;
+        dispatch(updateWidth(newValue));
     }
     const onNewHeight = (e) => {
-        let newHeight = e.target.value < 0 ? 0 : e.target.value;
-        dispatch(updateHeight(newHeight));
+        let newValueInt = Number.isInteger(+e.target.value) ? e.target.value : Math.ceil(+e.target.value);
+        let newValue = newValueInt.length === 0 ? '' : newValueInt < 1 ? 1 : newValueInt;
+        dispatch(updateHeight(newValue));
     }
     const onNewWeight = (e) => {
-        let newWeight = e.target.value < 0 ? 0 : e.target.value;
-        dispatch(updateWeight(newWeight));
+        let newValueInt = Number.isInteger(+e.target.value) ? e.target.value : Math.ceil(+e.target.value);
+        let newValue = newValueInt.length === 0 ? '' : newValueInt < 1 ? 1 : newValueInt;
+        dispatch(updateWeight(newValue));
     }
     const onNewInsurance = (e) => {
-        let newInsurance = e.target.value < 0 ? 0 : e.target.value;
-        dispatch(updateInsurance(newInsurance));
+        let newValueInt = Number.isInteger(+e.target.value) ? e.target.value : Math.ceil(+e.target.value);
+        let newValue = newValueInt.length === 0 ? '' : newValueInt < 1 ? 1 : newValueInt;
+        dispatch(updateInsurance(newValue));
     }
     //Переворот значений полей Откуда и Куда
     const switchLocations = () => {
@@ -121,20 +126,20 @@ const CalcPage = (props) => {
             currency: 1,
             lang: "rus",
             from_location: {
-                code: calcState.fromLocation
+                code: +calcState.fromLocation
             },
             to_location: {
-                code: calcState.toLocation
+                code: +calcState.toLocation
             },
             packages: [
                 {
-                    height: calcState.height,
-                    length: calcState.length,
-                    weight: calcState.weight,
-                    width: calcState.width
+                    height: +calcState.height,
+                    length: +calcState.length,
+                    weight: +calcState.weight,
+                    width: +calcState.width
                 }
             ],
-            insurance: calcState.insurance ? calcState.insurance : 1
+            insurance: +calcState.insurance ? +calcState.insurance : 1
         }
         dispatch(calcDeliveryCostThunk(data));
         changeIsFetchingState(true);
@@ -194,6 +199,7 @@ const CalcPage = (props) => {
                                            name="length" id="length"
                                            value={calcState.length} required
                                            type="number" placeholder="см"/>
+                                    <span className={styles.calcHelp}>Введите целое число</span>
                                 </label>
                             </div>
                             <div className={styles.calcShortBlock}>
@@ -203,6 +209,7 @@ const CalcPage = (props) => {
                                            name="width" id="width"
                                            value={calcState.width} required
                                            type="number" placeholder="см"/>
+                                    <span className={styles.calcHelp}>Введите целое число</span>
                                 </label>
                             </div>
                             <div className={styles.calcShortBlock}>
@@ -212,6 +219,7 @@ const CalcPage = (props) => {
                                            name="height" id="height"
                                            value={calcState.height} required
                                            type="number" placeholder="см"/>
+                                    <span className={styles.calcHelp}>Введите целое число</span>
                                 </label>
                             </div>
                             <div className={styles.calcShortBlock}>
@@ -221,6 +229,7 @@ const CalcPage = (props) => {
                                            name="weight" id="weight"
                                            value={calcState.weight} required
                                            type="number" placeholder="кг"/>
+                                    <span className={styles.calcHelp}>Введите целое число</span>
                                 </label>
                             </div>
                         </div>
@@ -231,6 +240,7 @@ const CalcPage = (props) => {
                                name="insurance" id="insurance"
                                value={calcState.insurance} required type="number"
                                placeholder="Объявленная стоимость, руб"/>
+                        <span className={styles.calcHelp}>Введите целое число</span>
                     </label>
                     <div className={styles.calcSubmitGroup}>
                         <input className={"verticalSubmit " + styles.calcSubmit} type="submit"

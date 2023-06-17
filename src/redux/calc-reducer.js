@@ -11,11 +11,7 @@ export const calcDeliveryCostThunk = createAsyncThunk(
             return response.data;
         } catch (err) {
             console.error('Failed to fetch tariffs:', err);
-            if (err.response.status === 400) {
-                alert(`Ошибка ${err.response.status}: Проверьте правильность введённых данных.`);
-            } else if (err.response.status === 429) {
-                alert(`Ошибка ${err.response.status}: Превышен лимит запросов на сервер. Подождите минуту.`);
-            }
+            alert(err.message);
         }
     }
 )
