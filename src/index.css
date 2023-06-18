@@ -168,6 +168,18 @@ a:hover {
     display: none;
 }
 
+.errorMessage {
+    margin: 1px 0;
+    position: absolute;
+    font-size: 0.875rem;
+    color: red;
+}
+
+input[type="submit"]:disabled {
+    pointer-events: none;
+    opacity: 0.6;
+}
+
 @media screen and (max-width: 767px) {
     .verticalForm {
         width: 100%;

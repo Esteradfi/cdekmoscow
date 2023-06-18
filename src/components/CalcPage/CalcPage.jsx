@@ -141,8 +141,14 @@ const CalcPage = (props) => {
             ],
             insurance: +calcState.insurance ? +calcState.insurance : 1
         }
-        dispatch(calcDeliveryCostThunk(data));
-        changeIsFetchingState(true);
+        if (data.from_location.code === 0) {
+            alert("Выберите город отправитель из списка");
+        } else if (data.to_location.code === 0) {
+            alert("Выберите город получатель из списка");
+        } else {
+            dispatch(calcDeliveryCostThunk(data));
+            changeIsFetchingState(true);
+        }
     }
 
     const onTariffsClose = () => {

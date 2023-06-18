@@ -185,7 +185,7 @@ const QuestionnairePage = (props) => {
                         <label htmlFor="webStore" className={"verticalLabel"}>
                             Ссылка на интернет-магазин
                         </label>
-                        <input name="webStore" id="webStore" onChange={onNewWebStore} value={webStore} className={"verticalInput"} required type="url" placeholder="Ссылка на ваш интернет-магазин"/>
+                        <input name="webStore" id="webStore" onChange={onNewWebStore} value={webStore} className={"verticalInput"} type="url" placeholder="Ссылка на ваш интернет-магазин"/>
                     </div>
                     <div className={styles.checkboxBlock}>
                         <label htmlFor="isAgree" className="custom-checkboxes" onClick={clickChangeIsAgree}>

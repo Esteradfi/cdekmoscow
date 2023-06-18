@@ -22,13 +22,17 @@
     justify-content: space-between;
 }
 
-.formRow input {
+.formRow .formLabel {
     width: 21%;
+}
+
+.formRow input {
+    width: 100%;
     border: 1px solid #e0e0e0;
 }
 
 @media screen and (max-width: 899px) {
-    .form input {
+    .form .formLabel {
         width: 20%;
     }
 }
@@ -60,12 +64,16 @@
     .formRow {
         flex-direction: column;
     }
+    .formRow .formLabel {
+        width: 100%;
+        max-width: 100%;
+    }
     .formRow input {
         max-width: 100%;
         width: 100%;
         height: 60px;
     }
-    .formInput {
+    .formLabel {
         margin-bottom: 20px;
     }
     .formBLockText, .formSubtitle {
