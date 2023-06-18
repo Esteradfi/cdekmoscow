@@ -270,7 +270,6 @@ const QuestionnairePage = (props) => {
                                        value: /^https?:\/\/(?:www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b(?:[-a-zA-Z0-9()@:%_\+.~#?&\/=]*)$/,
                                        message: "Некорректный адрес"
                                    },
-                                   required: "Обязательное поле"
                                })}/>
                         {errors?.webStore &&
                             <p className="errorMessage">{errors?.webStore?.message || "Ошибка заполнения"}</p>}
