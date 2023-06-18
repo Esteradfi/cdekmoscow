@@ -1,69 +1,89 @@
-import {useDispatch, useSelector} from "react-redux";
-import {updateComment, updateEmail, updateName, updatePhone, changeIsAgree} from "../../redux/contract-page-reducer";
+import {useDispatch} from "react-redux";
 import styles from "./ContractPage.module.css";
+import {useForm} from "react-hook-form";
 
 
 const ContractPage = (props) => {
-    let dispatch = useDispatch();
-    let name = useSelector(state => state.contractPage.name);
-    let email = useSelector(state => state.contractPage.email);
-    let phone = useSelector(state => state.contractPage.phone);
-    let comment = useSelector(state => state.contractPage.comment);
-    let isAgree = useSelector(state => state.contractPage.isAgree);
-    
-    const onNewComment = (e) => {
-        let newComment = e.target.value;
-        dispatch(updateComment(newComment));
-    }
-    
-    const onNewEmail = (e) => {
-        let newEmail = e.target.value;
-        dispatch(updateEmail(newEmail));
-    }
+    // let dispatch = useDispatch();
 
-    const onNewPhone = (e) => {
-        let newPhone = e.target.value;
-        dispatch(updatePhone(newPhone));
-    }
+    const {
+        register,
+        formState: {errors, isValid},
+        handleSubmit,
+        reset
+    } = useForm({
+        mode: "onChange"
+    });
 
-    const onNewName = (e) => {
-        let newName = e.target.value;
-        dispatch(updateName(newName));
-    }
-
-    const clickChangeIsAgree = () => {
-        dispatch(changeIsAgree(isAgree));
+    const onSubmit = (data) => {
+        alert(JSON.stringify(data));
+        reset();
     }
 
     return (
         <section className={"section "}>
             <article className="container ">
-                <form action="" method="" name="contract-form" id="contract-form" className={"verticalForm"}>
-                    <label htmlFor="name" className={"verticalLabel"}>
-                        ФИО
-                    </label>
-                    <input name="name" id="name" onChange={onNewName} value={name} className={"verticalInput"} required type="text" autoComplete="name" placeholder="Ваше имя"/>
-                    <label htmlFor="email" className={"verticalLabel"}>
-                        E-mail
-                    </label>
-                    <input name="email" id="email" onChange={onNewEmail} value={email} className={"verticalInput"} required type="email" placeholder="Ваш E-mail"/>
-                    <label htmlFor="phone" className={"verticalLabel"}>
-                        Телефон
-                    </label>
-                    <input name="phone" id="phone" onChange={onNewPhone} value={phone} className={"verticalInput"} required type="tel" autoComplete="tel" placeholder="Ваш телефон для связи"/>
-                    <label htmlFor="comment" className={"verticalLabel"}>
-                        Комментарий
-                        <small className={"verticalSmall"}>(Не обязательно к заполнению)</small>
-                    </label>
-                    <textarea name="comment" id="comment" onChange={onNewComment} className={"verticalTextarea"} value={comment}></textarea>
+                <form onSubmit={handleSubmit(onSubmit)} className={"verticalForm"}>
+                    <div className="verticalInputBlock">
+                        <label htmlFor="name" className={"verticalLabel"}>
+                            ФИО
+                        </label>
+                        <input id="name" className={"verticalInput"} type="text" autoComplete="name" placeholder="Ваше имя"
+                               {...register('name', {
+                                   required: "Обязательное поле", minLength: {
+                                       value: 1,
+                                       message: "Минимум 1 символ"
+                                   }
+                               })}/>
+                        {errors?.name && <p className="errorMessage">{errors?.name?.message || "Ошибка заполнения"}</p>}
+                    </div>
+                    <div className="verticalInputBlock">
+                        <label htmlFor="email" className={"verticalLabel"}>
+                            E-mail
+                        </label>
+                        <input id="email" className={"verticalInput"} type="email" placeholder="Ваш E-mail"
+                               {...register('email', {
+                                   required: "Обязательное поле",
+                                   pattern: {
+                                       value: /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/,
+                                       message: "Некорректная почта"
+                                   }
+                               })}/>
+                        {errors?.email && <p className="errorMessage">{errors?.email?.message || "Ошибка заполнения"}</p>}
+                    </div>
+                    <div className="verticalInputBlock">
+                        <label htmlFor="phone" className={"verticalLabel"}>
+                            Телефон
+                        </label>
+                        <input id="phone" className={"verticalInput"} type="tel" autoComplete="tel" placeholder="Ваш телефон для связи"
+                               {...register('phone', {
+                                   required: "Обязательное поле",
+                                   pattern: {
+                                       value: /^(\s*)?(\+)?([- _():=+]?\d[- _():=+]?){10,14}(\s*)?$/,
+                                       message: "Некорректный номер телефона"
+                                   }
+                               })}/>
+                        {errors?.phone && <p className="errorMessage">{errors?.phone?.message || "Ошибка заполнения"}</p>}
+                    </div>
+                    <div className="verticalInputBlock">
+                        <label htmlFor="comment" className={"verticalLabel"}>
+                            Комментарий
+                            <small className={"verticalSmall"}>(Не обязательно к заполнению)</small>
+                        </label>
+                        <textarea id="comment" className={"verticalTextarea"}
+                                  {...register('comment')}></textarea>
+                    </div>
                     <div className={styles.checkboxBlock}>
-                        <label htmlFor="isAgree" className="custom-checkboxes" onClick={clickChangeIsAgree}>
-                            <input name="isAgree" id="isAgree" type="checkbox" required />
+                        <label htmlFor="agreement" className="custom-checkboxes">
+                            <input type="checkbox" id="agreement"
+                                   {...register('agreement', {
+                                       required: "Обязательное поле",
+                                   })}/>
                             <span className="custom-checkboxes-span"></span>
                             <span className="horizontalFormSpan">Согласие на обработку персональных данных</span>
                         </label>
                     </div>
-                    <input className={"verticalSubmit"} type="submit"/>
+                    <input className={"verticalSubmit"} type="submit" disabled={!isValid}/>
                 </form>
                 <p className={styles.contractParagraph}>
                     «Нажимая на кнопку, вы даете согласие на обработку персональных данных и соглашаетесь c <a target="_blanc" href="//www.cdek.ru/storage/source/%D0%94%D0%BE%D0%BA%D1%83%D0%BC%D0%B5%D0%BD%D1%82%D1%8B/%D0%9F%D0%BE%D0%BB%D0%B8%D1%82%D0%B8%D0%BA%D0%B0/%D0%9F%D0%BE%D0%BB%D0%B8%D1%82%D0%B8%D0%BA%D0%B0_%D0%B2_%D0%BE%D1%82%D0%BD%D0%BE%D1%88%D0%B5%D0%BD%D0%B8%D0%B8_%D0%BE%D0%B1%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%BA%D0%B8_%D0%9F%D0%94%D0%BD_%D0%BA%D0%BB%D0%B8%D0%B5%D0%BD%D1%82%D0%BE%D0%B2_01_09_22.pdf">политикой конфиденциальности</a>»

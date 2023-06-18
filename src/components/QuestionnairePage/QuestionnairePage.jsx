@@ -107,89 +107,141 @@ const QuestionnairePage = (props) => {
         <section className={"section "}>
             <article className="container ">
                 <form action="" method="" name="questionnaire-form" id="questionnaire-form" className={"verticalForm"}>
-                    <label htmlFor="name" className={"verticalLabel"}>
-                        Контактное лицо
-                    </label>
-                    <input name="name" id="name" onChange={onNewName} value={name} className={"verticalInput"} required type="text" autoComplete="name" placeholder="Иван Петров"/>
-                    <label htmlFor="phone" className={"verticalLabel"}>
-                        Телефон
-                    </label>
-                    <input name="phone" id="phone" onChange={onNewPhone} value={phone} className={"verticalInput"} required type="tel" autoComplete="tel" placeholder="Контактный телефон"/>
-                    <label htmlFor="organizationName" className={"verticalLabel"}>
-                        Наименование
-                    </label>
-                    <input name="organizationName" id="organizationName" onChange={onNewOrganizationName} value={organizationName} className={"verticalInput"} required type="text" placeholder="Введите наименование организации"/>
-                    <label htmlFor="inn" className={"verticalLabel"}>
-                        ИНН
-                    </label>
-                    <input name="inn" id="inn" onChange={onNewInn} value={inn} className={"verticalInput"} required type="text" placeholder="ИНН вашей организации"/>
-                    <label htmlFor="legalAddress" className={"verticalLabel"}>
-                        Юридический адрес
-                    </label>
-                    <input name="legalAddress" id="legalAddress" onChange={onNewLegalAddress} value={legalAddress} className={"verticalInput"} required type="text" placeholder="Юридический адрес"/>
-                    <label htmlFor="certificateNumber" className={"verticalLabel"}>
-                        Номер свидетельства
-                        <small className={"verticalSmall"}>(Не обязательно к заполнению)</small>
-                    </label>
-                    <input name="certificateNumber" id="certificateNumber" onChange={onNewCertificateNumber} value={certificateNumber} className={"verticalInput"} type="text" placeholder="Номер свидетельства о регистрации"/>
-                    <label htmlFor="certificateIssueDate" className={"verticalLabel"}>
-                        Дата выдачи свидетельства о регистрации
-                        <small className={"verticalSmall"}>(Не обязательно к заполнению)</small>
-                    </label>
-                    <input name="certificateIssueDate" id="certificateIssueDate" onChange={onNewCertificateIssueDate} value={certificateIssueDate} className={"verticalInput"} type="date" placeholder="Дата выдачи свидетельства"/>
-                    <label htmlFor="bik" className={"verticalLabel"}>
-                        БИК
-                    </label>
-                    <input name="bik" id="bik" onChange={onNewBik} value={bik} className={"verticalInput"} required type="text" placeholder="БИК вашего банка"/>
-                    <label htmlFor="checkingAccount" className={"verticalLabel"}>
-                        Расчётный счет
-                    </label>
-                    <input name="checkingAccount" id="checkingAccount" onChange={onNewCheckingAccount} value={checkingAccount} className={"verticalInput"} required type="text" placeholder="Расчётный счет вашей организации"/>
-                    <label htmlFor="directorName" className={"verticalLabel"}>
-                        ФИО Директора
-                    </label>
-                    <input name="directorName" id="directorName" onChange={onNewDirectorName} value={directorName} className={"verticalInput"} required type="text" placeholder="Иванов Иван Иванович"/>
-                    <label htmlFor="email" className={"verticalLabel"}>
-                        E-mail
-                    </label>
-                    <input name="email" id="email" onChange={onNewEmail} value={email} className={"verticalInput"} required type="email" placeholder="Ваш E-mail"/>
-                    <label htmlFor="comment" className={"verticalLabel"}>
-                        Комментарий
-                        <small className={"verticalSmall"}>(Не обязательно к заполнению)</small>
-                    </label>
-                    <textarea name="comment" id="comment" onChange={onNewComment} className={"verticalTextarea"} value={comment}></textarea>
-                    <label htmlFor="pointAddress" className={"verticalLabel"}>
-                        Адрес пункта выдачи
-                    </label>
-                    <input name="pointAddress" id="pointAddress" onChange={onNewPointAddress} value={pointAddress} className={"verticalInput"} required type="text" placeholder="Адрес пункта выдачи для возвратов"/>
-                    <label htmlFor="city" className={"verticalLabel"}>
-                        Город
-                    </label>
-                    <input name="city" id="city" onChange={onNewCity} value={city} className={"verticalInput"} required type="text" placeholder="Ваш город"/>
-                    <label htmlFor="isWebStore" className={"verticalLabel"}>
-                        Интернет-магазин
-                    </label>
-                    <div className={"inputsGroup"}>
-                        <label htmlFor="isWebStoreTrue" className="custom-radio">
-                            <input name="isWebStore" id="isWebStoreTrue" onChange={onNewIsWebStore} value="1" type="radio" />
-                            <span className="custom-radio-span"></span>
-                            <span className="horizontalFormSpan">Да</span>
+                    <div className="verticalInputBlock">
+                        <label htmlFor="name" className={"verticalLabel"}>
+                            Контактное лицо
                         </label>
-                        <label htmlFor="isWebStoreFalse" className="custom-radio">
-                            <input name="isWebStore" id="isWebStoreFalse" onChange={onNewIsWebStore} value="" type="radio" />
-                            <span className="custom-radio-span"></span>
-                            <span className="horizontalFormSpan">Нет</span>
-                        </label>
+                        <input name="name" id="name" onChange={onNewName} value={name} className={"verticalInput"}
+                               required type="text" autoComplete="name" placeholder="Иван Петров"/>
                     </div>
-                    <div className={isWebStore ? "visibleVerticalInput" : "hiddenVerticalInput"}>
+                    <div className="verticalInputBlock">
+                        <label htmlFor="phone" className={"verticalLabel"}>
+                            Телефон
+                        </label>
+                        <input name="phone" id="phone" onChange={onNewPhone} value={phone} className={"verticalInput"}
+                               required type="tel" autoComplete="tel" placeholder="Контактный телефон"/>
+                    </div>
+                    <div className="verticalInputBlock">
+                        <label htmlFor="organizationName" className={"verticalLabel"}>
+                            Наименование
+                        </label>
+                        <input name="organizationName" id="organizationName" onChange={onNewOrganizationName}
+                               value={organizationName} className={"verticalInput"} required type="text"
+                               placeholder="Введите наименование организации"/>
+                    </div>
+                    <div className="verticalInputBlock">
+                        <label htmlFor="inn" className={"verticalLabel"}>
+                            ИНН
+                        </label>
+                        <input name="inn" id="inn" onChange={onNewInn} value={inn} className={"verticalInput"} required
+                               type="text" placeholder="ИНН вашей организации"/>
+                    </div>
+                    <div className="verticalInputBlock">
+                        <label htmlFor="legalAddress" className={"verticalLabel"}>
+                            Юридический адрес
+                        </label>
+                        <input name="legalAddress" id="legalAddress" onChange={onNewLegalAddress} value={legalAddress}
+                               className={"verticalInput"} required type="text" placeholder="Юридический адрес"/>
+                    </div>
+                    <div className="verticalInputBlock">
+                        <label htmlFor="certificateNumber" className={"verticalLabel"}>
+                            Номер свидетельства
+                            <small className={"verticalSmall"}>(Не обязательно к заполнению)</small>
+                        </label>
+                        <input name="certificateNumber" id="certificateNumber" onChange={onNewCertificateNumber}
+                               value={certificateNumber} className={"verticalInput"} type="text"
+                               placeholder="Номер свидетельства о регистрации"/>
+                    </div>
+                    <div className="verticalInputBlock">
+                        <label htmlFor="certificateIssueDate" className={"verticalLabel"}>
+                            Дата выдачи свидетельства о регистрации
+                            <small className={"verticalSmall"}>(Не обязательно к заполнению)</small>
+                        </label>
+                        <input name="certificateIssueDate" id="certificateIssueDate"
+                               onChange={onNewCertificateIssueDate} value={certificateIssueDate}
+                               className={"verticalInput"} type="date" placeholder="Дата выдачи свидетельства"/>
+                    </div>
+                    <div className="verticalInputBlock">
+                        <label htmlFor="bik" className={"verticalLabel"}>
+                            БИК
+                        </label>
+                        <input name="bik" id="bik" onChange={onNewBik} value={bik} className={"verticalInput"} required
+                               type="text" placeholder="БИК вашего банка"/>
+                    </div>
+                    <div className="verticalInputBlock">
+                        <label htmlFor="checkingAccount" className={"verticalLabel"}>
+                            Расчётный счет
+                        </label>
+                        <input name="checkingAccount" id="checkingAccount" onChange={onNewCheckingAccount}
+                               value={checkingAccount} className={"verticalInput"} required type="text"
+                               placeholder="Расчётный счет вашей организации"/>
+                    </div>
+                    <div className="verticalInputBlock">
+                        <label htmlFor="directorName" className={"verticalLabel"}>
+                            ФИО Директора
+                        </label>
+                        <input name="directorName" id="directorName" onChange={onNewDirectorName} value={directorName}
+                               className={"verticalInput"} required type="text" placeholder="Иванов Иван Иванович"/>
+                    </div>
+                    <div className="verticalInputBlock">
+                        <label htmlFor="email" className={"verticalLabel"}>
+                            E-mail
+                        </label>
+                        <input name="email" id="email" onChange={onNewEmail} value={email} className={"verticalInput"}
+                               required type="email" placeholder="Ваш E-mail"/>
+                    </div>
+                    <div className="verticalInputBlock">
+                        <label htmlFor="comment" className={"verticalLabel"}>
+                            Комментарий
+                            <small className={"verticalSmall"}>(Не обязательно к заполнению)</small>
+                        </label>
+                        <textarea name="comment" id="comment" onChange={onNewComment} className={"verticalTextarea"}
+                                  value={comment}></textarea>
+                    </div>
+                    <div className="verticalInputBlock">
+                        <label htmlFor="pointAddress" className={"verticalLabel"}>
+                            Адрес пункта выдачи
+                        </label>
+                        <input name="pointAddress" id="pointAddress" onChange={onNewPointAddress} value={pointAddress}
+                               className={"verticalInput"} required type="text"
+                               placeholder="Адрес пункта выдачи для возвратов"/>
+                    </div>
+                    <div className="verticalInputBlock">
+                        <label htmlFor="city" className={"verticalLabel"}>
+                            Город
+                        </label>
+                        <input name="city" id="city" onChange={onNewCity} value={city} className={"verticalInput"}
+                               required type="text" placeholder="Ваш город"/>
+                    </div>
+                    <div className="verticalInputBlock">
+                        <label htmlFor="isWebStore" className={"verticalLabel"}>
+                            Интернет-магазин
+                        </label>
+                        <div className={"inputsGroup"}>
+                            <label htmlFor="isWebStoreTrue" className="custom-radio">
+                                <input name="isWebStore" id="isWebStoreTrue" onChange={onNewIsWebStore} value="1"
+                                       type="radio"/>
+                                <span className="custom-radio-span"></span>
+                                <span className="horizontalFormSpan">Да</span>
+                            </label>
+                            <label htmlFor="isWebStoreFalse" className="custom-radio">
+                                <input name="isWebStore" id="isWebStoreFalse" onChange={onNewIsWebStore} value=""
+                                       type="radio"/>
+                                <span className="custom-radio-span"></span>
+                                <span className="horizontalFormSpan">Нет</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div className={isWebStore ? "visibleVerticalInput verticalInputBlock" : "hiddenVerticalInput"}>
                         <label htmlFor="webStore" className={"verticalLabel"}>
                             Ссылка на интернет-магазин
                         </label>
-                        <input name="webStore" id="webStore" onChange={onNewWebStore} value={webStore} className={"verticalInput"} type="url" placeholder="Ссылка на ваш интернет-магазин"/>
+                        <input name="webStore" id="webStore" onChange={onNewWebStore} value={webStore}
+                               className={"verticalInput"} type="url" placeholder="Ссылка на ваш интернет-магазин"/>
                     </div>
                     <div className={styles.checkboxBlock}>
                         <label htmlFor="isAgree" className="custom-checkboxes" onClick={clickChangeIsAgree}>
-                            <input name="isAgree" id="isAgree" type="checkbox" required />
+                            <input name="isAgree" id="isAgree" type="checkbox" required/>
                             <span className="custom-checkboxes-span"></span>
                             <span className="horizontalFormSpan">Согласие на обработку персональных данных</span>
                         </label>

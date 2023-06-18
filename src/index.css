@@ -71,6 +71,7 @@ a:hover {
     justify-content: left;
     font-size: 1.125rem;
     letter-spacing: 0.05rem;
+    position: relative;
 }
 
 .verticalSmall {
@@ -78,9 +79,12 @@ a:hover {
     margin-top: 5px;
 }
 
+.verticalInputBlock {
+    margin-bottom: 30px;
+}
+
 .verticalInput, .verticalTextarea {
     width: 100%;
-    margin-bottom: 30px;
     border: 1px solid #1d1d1b;
 }
 
