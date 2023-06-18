@@ -7,7 +7,28 @@
     background: #ffffff;
     width: 100%;
     max-height: 80vh;
+    min-height: 80vh;
     padding: 1rem;
+}
+
+.tariffsPopupHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.tariffsPopupInfo {
+    text-align: left;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.greenText {
+    color: #00843e;
+}
+.dimText {
+    opacity: 0.6;
 }
 
 @media screen and (max-width: 1250px) {
@@ -16,7 +37,7 @@
     }
 }
 
-.tariffsClose {
+.tariffsButton {
     background: #00843e;
     transition: 0.3s ease;
     border: none;
@@ -25,12 +46,12 @@
     padding: 10px;
     color: #ffffff;
     display: flex;
-    width: 300px;
+    width: 290px;
     justify-content: center;
     font-size: 1rem;
 }
 
-.tariffsClose:hover {
+.tariffsButton:hover {
     background: #009b47;
 }
 
@@ -57,6 +78,9 @@ td {
 }
 
 @media screen and (max-width: 660px) {
+    .tariffsPopupHeader {
+        flex-direction: column;
+    }
     .tariffsPopup {
         width: 92%;
         top: 0;
@@ -65,7 +89,7 @@ td {
         max-height: 100vh;
         transform: none;
     }
-    .tariffsClose {
+    .tariffsButton {
         width: 100%;
         padding: 20px;
     }

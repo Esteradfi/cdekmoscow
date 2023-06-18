@@ -14,7 +14,11 @@ import {
     calcDeliveryCostThunk,
     updateFromLocation,
     updateToLocation,
-    updateSearchResultsFromLocation, updateSearchResultsToLocation, changeIsFetching, changeTariffsIsOpen
+    updateSearchResultsFromLocation,
+    updateSearchResultsToLocation,
+    changeIsFetching,
+    changeTariffsIsOpen,
+    changeIsRequestCallWindow
 } from "../../redux/calc-reducer";
 import {useEffect} from "react";
 import FromLocationItem from "./FromLocationItem/FromLocationItem";
@@ -30,7 +34,7 @@ const CalcPage = (props) => {
 
     const {
         register,
-        formState: { errors },
+        formState: {errors},
         handleSubmit
     } = useForm()
 
@@ -153,6 +157,11 @@ const CalcPage = (props) => {
 
     const onTariffsClose = () => {
         dispatch(changeTariffsIsOpen(false));
+        dispatch(changeIsRequestCallWindow(false));
+    }
+
+    const onRequestCall = () => {
+        dispatch(changeIsRequestCallWindow(!calcState.isRequestCallWindow))
     }
 
     return (
@@ -163,7 +172,8 @@ const CalcPage = (props) => {
                          : null}></div>
             {calcState.isFetching && <Preloader/>}
             {calcState.tariffsIsOpen &&
-                <TariffsPopup state={calcState} dispatch={dispatch} onTariffsClose={onTariffsClose}/>}
+                <TariffsPopup state={calcState} dispatch={dispatch} onTariffsClose={onTariffsClose}
+                              onRequestCall={onRequestCall}/>}
             <article className={"container "}>
                 <h1 className={styles.articleTitle}>Калькулятор стоимости доставки</h1>
                 <form className={styles.calcForm} onSubmit={handleSubmit(calcDeliveryCost)}>
@@ -204,7 +214,7 @@ const CalcPage = (props) => {
                                     <input className={styles.calcShortInput} onChange={onNewLength}
                                            name="length" id="length"
                                            value={calcState.length} required
-                                           type="number" placeholder="см"/>
+                                           type="number" placeholder="см" autoComplete="none"/>
                                     <span className={styles.calcHelp}>Введите целое число</span>
                                 </label>
                             </div>
@@ -214,7 +224,7 @@ const CalcPage = (props) => {
                                     <input className={styles.calcShortInput} onChange={onNewWidth}
                                            name="width" id="width"
                                            value={calcState.width} required
-                                           type="number" placeholder="см"/>
+                                           type="number" placeholder="см" autoComplete="none"/>
                                     <span className={styles.calcHelp}>Введите целое число</span>
                                 </label>
                             </div>
@@ -224,7 +234,7 @@ const CalcPage = (props) => {
                                     <input className={styles.calcShortInput} onChange={onNewHeight}
                                            name="height" id="height"
                                            value={calcState.height} required
-                                           type="number" placeholder="см"/>
+                                           type="number" placeholder="см" autoComplete="off"/>
                                     <span className={styles.calcHelp}>Введите целое число</span>
                                 </label>
                             </div>
@@ -234,7 +244,7 @@ const CalcPage = (props) => {
                                     <input className={styles.calcShortInput} onChange={onNewWeight}
                                            name="weight" id="weight"
                                            value={calcState.weight} required
-                                           type="number" placeholder="кг"/>
+                                           type="number" placeholder="кг" autoComplete="off"/>
                                     <span className={styles.calcHelp}>Введите целое число</span>
                                 </label>
                             </div>
@@ -242,9 +252,9 @@ const CalcPage = (props) => {
                     </div>
                     <label className={"verticalLabel " + styles.calcLabel} htmlFor="insurance">
                         Страховка отправления *
-                        <input className={styles.calcLongInput + " " + styles.calcSingleInput} onChange={onNewInsurance}
+                        <input className={styles.calcLongInput} onChange={onNewInsurance}
                                name="insurance" id="insurance"
-                               value={calcState.insurance} required type="number"
+                               value={calcState.insurance} required type="number" autoComplete="none"
                                placeholder="Объявленная стоимость, руб"/>
                         <span className={styles.calcHelp}>Введите целое число</span>
                     </label>

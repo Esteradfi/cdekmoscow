@@ -47,6 +47,7 @@ export const calcSlice = createSlice({
         tariffsList: [],
         tariffsIsOpen: false,
         insuranceCost: 0,
+        isRequestCallWindow: false,
     },
     reducers: {
         updateFromLocationName: (state, action) => {
@@ -87,6 +88,9 @@ export const calcSlice = createSlice({
         },
         changeTariffsIsOpen: (state, action) => {
             state.tariffsIsOpen = action.payload;
+        },
+        changeIsRequestCallWindow: (state, action) => {
+            state.isRequestCallWindow = action.payload;
         }
     },
     extraReducers: (builder) => {
@@ -118,6 +122,7 @@ export const {
     updateSearchResultsToLocation,
     updateSearchResultsFromLocation,
     changeIsFetching,
-    changeTariffsIsOpen
+    changeTariffsIsOpen,
+    changeIsRequestCallWindow
 } = calcSlice.actions;
 export default calcSlice.reducer;
