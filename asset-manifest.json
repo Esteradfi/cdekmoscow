@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/cdekmoscow/static/css/main.53b770ba.css",
-    "main.js": "/cdekmoscow/static/js/main.7bb9fbfd.js",
+    "main.css": "/cdekmoscow/static/css/main.0d5e34fb.css",
+    "main.js": "/cdekmoscow/static/js/main.bfafcc8f.js",
     "static/media/cdek-logo.jpg": "/cdekmoscow/static/media/cdek-logo.e4fe0f9c6f8bc047a32a.jpg",
     "static/media/background.png": "/cdekmoscow/static/media/background.e2b04b083f42370d32ee.png",
     "static/media/roboto-all-400-normal.woff": "/cdekmoscow/static/media/roboto-all-400-normal.c5d001fa922fa66a147f.woff",
@@ -16,20 +16,22 @@
     "static/media/o8.svg": "/cdekmoscow/static/media/o8.a13f1fd76c6684c1323c712176329480.svg",
     "static/media/whatsapp.svg": "/cdekmoscow/static/media/whatsapp.d6397058c803dcdeb3f6244906ecd6b4.svg",
     "static/media/email.svg": "/cdekmoscow/static/media/email.a2049886aa669567c3cf2ac57e336ea5.svg",
+    "static/media/telegram.svg": "/cdekmoscow/static/media/telegram.261109e72c1ee068697e8b01c6379ed5.svg",
     "static/media/roboto-greek-ext-400-normal.woff2": "/cdekmoscow/static/media/roboto-greek-ext-400-normal.169619821ea93019d1bb.woff2",
     "static/media/phone.svg": "/cdekmoscow/static/media/phone.f195712a1c1f532f26a86c6fd65c1c20.svg",
     "static/media/messenger.svg": "/cdekmoscow/static/media/messenger.76066b50fadf32971feedf496ffb35dd.svg",
+    "static/media/done.svg": "/cdekmoscow/static/media/done.9449d5316f954806a581746f8a40dafa.svg",
     "index.html": "/cdekmoscow/index.html",
     "static/media/arrow-right.svg": "/cdekmoscow/static/media/arrow-right.7f794c9f8fb61acf8c71a7ffee099789.svg",
     "static/media/preloader.svg": "/cdekmoscow/static/media/preloader.c7fb60a2f3090c691dcd065eb3d3f521.svg",
     "static/media/burger.svg": "/cdekmoscow/static/media/burger.d187d7b6fdf71d1ae3d044fb191ba9bb.svg",
     "static/media/close.svg": "/cdekmoscow/static/media/close.4142a4c4da81aa532dbf96d1ff569509.svg",
     "static/media/switch-points.svg": "/cdekmoscow/static/media/switch-points.cce79abd748c17877b0dfd181eedf367.svg",
-    "main.53b770ba.css.map": "/cdekmoscow/static/css/main.53b770ba.css.map",
-    "main.7bb9fbfd.js.map": "/cdekmoscow/static/js/main.7bb9fbfd.js.map"
+    "main.0d5e34fb.css.map": "/cdekmoscow/static/css/main.0d5e34fb.css.map",
+    "main.bfafcc8f.js.map": "/cdekmoscow/static/js/main.bfafcc8f.js.map"
   },
   "entrypoints": [
-    "static/css/main.53b770ba.css",
-    "static/js/main.7bb9fbfd.js"
+    "static/css/main.0d5e34fb.css",
+    "static/js/main.bfafcc8f.js"
   ]
 }
