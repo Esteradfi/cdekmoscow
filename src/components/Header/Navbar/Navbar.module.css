@@ -5,15 +5,46 @@
 .navbarItem {
     padding: 0 15px;
     display: flex;
-    height: 90px;
+    height: 88px;
     align-items: center;
     justify-content: center;
     flex-direction: column;
     border: 1px solid transparent;
+    transition: 0.3s ease;
+    background: #ffffff;
+}
+
+.navbarDrop {
+    cursor: pointer;
+    position: relative;
+    display: inline-block;
+}
+
+.navbarDrop:hover .navbarDropItem {
+    display: flex;
+}
+
+.navbarDropItem {
+    display: none;
+    position: absolute;
+    border: 1px solid transparent;
+    z-index: 25;
+    bottom: -90px;
+    left: 0;
+    right: 0;
+}
+
+.navbarDropItem:last-child {
+    bottom: -180px;
+}
+
+.navbarDropItem:hover {
+    border: 1px solid #00843e;
 }
 
 .navbarItem:hover {
     border: 1px solid #00843e;
+    color: #00843e;
 }
 
 @media screen and (max-width: 767px) {

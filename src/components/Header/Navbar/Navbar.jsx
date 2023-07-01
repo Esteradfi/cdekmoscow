@@ -12,14 +12,30 @@ const Navbar = (props) => {
             <NavLink to="/contract" className={styles.navbarItem}>
                 Заключить договор
             </NavLink>
-            <NavLink to="/questionnaire" className={styles.navbarItem}>
-                Заполнить анкету
-            </NavLink>
+            {isOpen ? <>
+                <NavLink to="/questionnaire-self" className={styles.navbarItem}>
+                    Заполнить анкету для самозанятых
+                </NavLink>
+                <NavLink to="/questionnaire" className={styles.navbarItem}>
+                    Заполнить анкету для ИП и ООО
+                </NavLink>
+            </> : <div className={styles.navbarDrop}>
+                <div className={styles.navbarItem}>
+                    Заполнить анкету
+                </div>
+                <NavLink to="/questionnaire-self" className={styles.navbarItem + " " + styles.navbarDropItem}>
+                    Для самозанятых
+                </NavLink>
+                <NavLink to="/questionnaire" className={styles.navbarItem + " " + styles.navbarDropItem}>
+                    Для ИП и ООО
+                </NavLink>
+            </div>}
             <NavLink to="/calculator" className={styles.navbarItem}>
                 Рассчитать стоимость
             </NavLink>
             <div className={styles.navbarItem}>
-                <a target="_blank" href="https://yandex.ru/maps/213/moscow/house/kantemirovskaya_ulitsa_53k1/Z04YcAJgQE0GQFtvfXpydnlnZA==/?indoorLevel=1&ll=37.650981%2C55.637540&z=17.09">
+                <a target="_blank"
+                   href="https://yandex.ru/maps/213/moscow/house/kantemirovskaya_ulitsa_53k1/Z04YcAJgQE0GQFtvfXpydnlnZA==/?indoorLevel=1&ll=37.650981%2C55.637540&z=17.09">
                     <div>г. Москва</div>
                     <div>Кантемировская 53 корп. 1</div>
                 </a>

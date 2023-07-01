@@ -17,11 +17,10 @@
 
 .headerWrapper {
     display: flex;
-    position: relative;
     justify-content: space-between;
     align-items: center;
-    min-height: 90px;
-    z-index: 20;
+    overflow-x: clip;
+    height: 90px;
     background: #ffffff;
 }
 
@@ -63,6 +62,7 @@
     }
     .headerPanel, .headerPanelOpen {
         display: block;
+        background: #ffffff;
     }
     .headerPanel {
         transform: translateY(-100%);

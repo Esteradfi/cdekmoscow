@@ -12,9 +12,9 @@ export const headerFooterSlice = createSlice({
         },
         setYear: (state, action) => {
             state.year = action.payload;
-        }
+        },
     },
 })
 
-export const { toggleBurger, setYear } = headerFooterSlice.actions;
+export const { toggleBurger, setYear} = headerFooterSlice.actions;
 export default headerFooterSlice.reducer;

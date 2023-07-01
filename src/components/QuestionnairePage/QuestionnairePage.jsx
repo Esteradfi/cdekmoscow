@@ -8,6 +8,7 @@ import styles from "./QuestionnairePage.module.css";
 import {useForm} from "react-hook-form";
 import Preloader from "../common/Preloader/Preloader";
 import DonePopup from "../common/DonePopup/DonePopup";
+import ArticleTitle from "../common/AtricleTitle/ArticleTitle";
 
 
 const QuestionnairePage = (props) => {
@@ -77,6 +78,7 @@ const QuestionnairePage = (props) => {
             <article className="container ">
                 {questionnaireState.isFetching && <Preloader/>}
                 {questionnaireState.isDone && <DonePopup/>}
+                <h2 className="articleTitle">Анкета для ИП и ООО</h2>
                 <form onSubmit={handleSubmit(onSubmit)} className={"verticalForm"}>
                     <div className="verticalInputBlock">
                         <label htmlFor="contactPerson" className={"verticalLabel"}>
