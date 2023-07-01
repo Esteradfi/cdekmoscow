@@ -1,6 +1,7 @@
 import email from "./../../../../assets/icons/email.svg";
 import whatsapp from "./../../../../assets/icons/whatsapp.svg";
 import phone from "./../../../../assets/icons/phone.svg";
+import telegram from "./../../../../assets/icons/telegram.svg";
 import styles from "./ContactsWidgetElement.module.css";
 
 const ContactsWidgetElement = (props) => {
@@ -13,6 +14,8 @@ const ContactsWidgetElement = (props) => {
                 return email;
             case "whatsapp":
                 return whatsapp;
+            case "telegram":
+                return telegram
             default:
                 return "";
         }

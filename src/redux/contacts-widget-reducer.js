@@ -20,6 +20,11 @@ export const contactsWidgetSlice = createSlice({
                 name: "WhatsApp",
                 link: "https://wa.me/79687441054",
             },
+            {
+                id: "telegram",
+                name: "Telegram",
+                link: "#"
+            }
         ],
     },
     reducers: {

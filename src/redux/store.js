@@ -9,6 +9,7 @@ import sliderReducer from "./slider-reducer";
 import contractPageReducer from "./contract-page-reducer";
 import questionnairePageReducer from "./questionnaire-page-reducer";
 import calcReducer from "./calc-reducer";
+import orderCallReducer from "./order-call-reducer";
 
 export default configureStore({
     reducer: {
@@ -21,6 +22,7 @@ export default configureStore({
         contractPage: contractPageReducer,
         questionnairePage: questionnairePageReducer,
         calc: calcReducer,
+        orderCall: orderCallReducer,
     },
     devTools: true,
 })

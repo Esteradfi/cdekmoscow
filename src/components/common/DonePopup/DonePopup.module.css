@@ -1,0 +1,21 @@
+.doneBlock {
+    position: fixed;
+    max-width: 200px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 20;
+    background: #00843e;
+    color: #ffffff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 20px 0 rgba(0,0,0,.3);
+}
+
+.doneBlock img {
+    width: 64px;
+}
+
+.doneBlock p {
+    margin-bottom: 0;
+}

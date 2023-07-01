@@ -56,10 +56,6 @@
     letter-spacing: 0.1em;
 }
 
-.formBlockLink {
-    color: #00843e;
-}
-
 @media screen and (max-width: 767px) {
     .formRow {
         flex-direction: column;

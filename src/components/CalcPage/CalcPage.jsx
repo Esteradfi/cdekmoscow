@@ -33,8 +33,6 @@ const CalcPage = (props) => {
     let cities = calcState.cities;
 
     const {
-        register,
-        formState: {errors},
         handleSubmit
     } = useForm()
 

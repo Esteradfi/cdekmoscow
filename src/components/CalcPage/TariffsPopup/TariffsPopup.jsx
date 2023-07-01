@@ -5,8 +5,13 @@ import RequestCall from "./RequestCall/RequestCall";
 const TariffsPopup = (props) => {
     let state = props.state;
 
+    let windowInnerWidth = window.innerWidth;
+    let secondLocationTotalcolumn = windowInnerWidth < 816;
+
     let tariffItems = state.tariffsList.map(el => <TariffsItem key={el.tariff_code} el={el}
-                                                               insuranceCost={state.insuranceCost}/>)
+                                                               secondLocationTotalcolumn={secondLocationTotalcolumn}
+                                                               insuranceCost={state.insuranceCost}/>);
+
 
     return (
         <div className={"container " + styles.tariffsPopup}>
@@ -38,12 +43,19 @@ const TariffsPopup = (props) => {
                     <div className={styles.tableWrapper}>
                         <table className={styles.tariffsTable}>
                             <thead>
-                            <tr>
-                                <th>Тариф</th>
-                                <th>Страховка отправления</th>
-                                <th>Срок доставки</th>
-                                <th>Итого</th>
-                            </tr>
+                            {secondLocationTotalcolumn ? <tr>
+                                        <th>Тариф</th>
+                                        <th>Итого</th>
+                                        <th>Стоимость доставки</th>
+                                        <th>Стоимость страховки</th>
+                                        <th>Срок доставки</th>
+                            </tr> : <tr>
+                                        <th>Тариф</th>
+                                        <th>Стоимость доставки</th>
+                                        <th>Стоимость страховки</th>
+                                        <th>Срок доставки</th>
+                                        <th>Итого</th>
+                                    </tr>}
                             </thead>
                             <tbody>
                             {tariffItems}

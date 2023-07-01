@@ -2,6 +2,20 @@
     display: flex;
 }
 
+.navbarItem {
+    padding: 0 15px;
+    display: flex;
+    height: 90px;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border: 1px solid transparent;
+}
+
+.navbarItem:hover {
+    border: 1px solid #00843e;
+}
+
 @media screen and (max-width: 767px) {
     .navbar {
         display: none;
@@ -13,25 +27,23 @@
         gap: 20px;
         margin-bottom: 30px;
     }
+    .navbarItem {
+        height: auto;
+    }
 }
 
-.navbar a {
-    padding: 0 15px;
-    display: flex;
-    height: 90px;
-    align-items: center;
-}
 
 @media screen and (max-width: 1023px) {
-    .navbar a {
+    .navbarItem {
         padding: 0 10px;
     }
 }
 
+/*
 .navbar a:first-child {
     padding-left: 0;
 }
 
 .navbar a:last-child {
     padding-right: 0;
-}
+}*/

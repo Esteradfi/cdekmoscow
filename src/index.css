@@ -20,7 +20,7 @@ input:focus, textarea:focus {
 }
 
 input[type="date" i] {
-    font-family: Roboto;
+    font-family: Roboto, sans-serif;
 }
 
 .container {
@@ -58,7 +58,7 @@ a:hover {
 
 .verticalForm {
     margin: 0 auto;
-    width: 60%;
+    width: 69%;
 }
 
 .verticalLabel {
@@ -89,7 +89,7 @@ a:hover {
 }
 
 .verticalTextarea {
-    font-size: Roboto;
+    font-family: Roboto, sans-serif;
     resize: vertical;
     min-height: 120px;
 }
@@ -182,6 +182,15 @@ a:hover {
 input[type="submit"]:disabled {
     pointer-events: none;
     opacity: 0.6;
+}
+
+.formBlockLink {
+    color: #00843e;
+    transition: 0.3s ease;
+}
+
+.formBlockLink:hover {
+    color: #009b47;
 }
 
 @media screen and (max-width: 767px) {

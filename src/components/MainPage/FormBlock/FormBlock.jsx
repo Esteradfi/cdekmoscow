@@ -1,10 +1,15 @@
 import ArticleTitle from "../../common/AtricleTitle/ArticleTitle";
 import styles from "./FormBlock.module.css";
-import {useDispatch} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 import {useForm} from "react-hook-form";
+import DonePopup from "../../common/DonePopup/DonePopup";
+import {endIsDone, postFeedbackThunk, startIsFetching} from "../../../redux/main-page-form-reducer";
+import Preloader from "../../common/Preloader/Preloader";
 
 const FormBlock = (props) => {
-    // let dispatch = useDispatch();
+    let isDone = useSelector(state => state.mainPageForm.isDone);
+    let isFetching = useSelector(state => state.mainPageForm.isFetching);
+    let dispatch = useDispatch();
 
     const {
         register,
@@ -16,12 +21,24 @@ const FormBlock = (props) => {
     });
 
     const onSubmit = (data) => {
-        alert(JSON.stringify(data));
-        reset();
+        dispatch(startIsFetching());
+        dispatch(postFeedbackThunk(data));
+        reset({
+            name: '',
+            email: '',
+            phone: '',
+            agreement: false
+        });
+    }
+
+    if (isDone) {
+        setTimeout(() => dispatch(endIsDone()), 3000);
     }
 
     return (
         <article className={styles.formBlock}>
+            {isFetching && <Preloader/>}
+            {isDone && <DonePopup/>}
             <div className={"container "}>
                 <div className={styles.formTitle}>
                     <ArticleTitle title={"Нужно больше информации?"}/>
@@ -31,7 +48,7 @@ const FormBlock = (props) => {
                 </h3>
                 <form onSubmit={handleSubmit(onSubmit)}>
                     <div className={styles.formRow}>
-                        <label htmlFor="name" className={styles.formLabel}>
+                        <label className={styles.formLabel}>
                             <input type="text"
                                    autoComplete="name" placeholder="Имя"
                                    {...register('name', {
@@ -40,9 +57,10 @@ const FormBlock = (props) => {
                                            message: "Минимум 1 символ"
                                        }
                                    })}/>
-                            {errors?.name && <p className="errorMessage">{errors?.name?.message || "Ошибка заполнения"}</p>}
+                            {errors?.name &&
+                                <p className="errorMessage">{errors?.name?.message || "Ошибка заполнения"}</p>}
                         </label>
-                        <label htmlFor="email" className={styles.formLabel}>
+                        <label className={styles.formLabel}>
                             <input type="email"
                                    placeholder="E-mail"
                                    {...register('email', {
@@ -52,9 +70,10 @@ const FormBlock = (props) => {
                                            message: "Некорректная почта"
                                        }
                                    })}/>
-                            {errors?.email && <p className="errorMessage">{errors?.email?.message || "Ошибка заполнения"}</p>}
+                            {errors?.email &&
+                                <p className="errorMessage">{errors?.email?.message || "Ошибка заполнения"}</p>}
                         </label>
-                        <label htmlFor="phone" className={styles.formLabel}>
+                        <label className={styles.formLabel}>
                             <input type="tel"
                                    autoComplete="tel" placeholder="Телефон"
                                    {...register('phone', {
@@ -64,9 +83,10 @@ const FormBlock = (props) => {
                                            message: "Некорректный номер телефона"
                                        }
                                    })}/>
-                            {errors?.phone && <p className="errorMessage">{errors?.phone?.message || "Ошибка заполнения"}</p>}
+                            {errors?.phone &&
+                                <p className="errorMessage">{errors?.phone?.message || "Ошибка заполнения"}</p>}
                         </label>
-                        <label htmlFor="" className={styles.formLabel}>
+                        <label className={styles.formLabel}>
                             <input className={styles.formSubmit} type="submit" disabled={!isValid}/>
                         </label>
                     </div>
@@ -77,16 +97,14 @@ const FormBlock = (props) => {
                                        required: "Обязательное поле",
                                    })}/>
                             <span className="custom-checkboxes-span"></span>
-                            <span className="horizontalFormSpan">Согласие на обработку персональных данных</span>
+                            <span className="horizontalFormSpan">«Я даю согласие на обработку персональных данных и соглашаюсь c <a
+                                className="formBlockLink"
+                                target="_blanc"
+                                href="https://www.cdek.ru/storage/source/%D0%94%D0%BE%D0%BA%D1%83%D0%BC%D0%B5%D0%BD%D1%82%D1%8B/%D0%9F%D0%BE%D0%BB%D0%B8%D1%82%D0%B8%D0%BA%D0%B0/%D0%9F%D0%BE%D0%BB%D0%B8%D1%82%D0%B8%D0%BA%D0%B0_%D0%B2_%D0%BE%D1%82%D0%BD%D0%BE%D1%88%D0%B5%D0%BD%D0%B8%D0%B8_%D0%BE%D0%B1%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%BA%D0%B8_%D0%9F%D0%94%D0%BD_%D0%BA%D0%BB%D0%B8%D0%B5%D0%BD%D1%82%D0%BE%D0%B2_01_09_22.pdf">политикой конфиденциальности</a>»
+                            </span>
                         </label>
                     </div>
                 </form>
-                <div className={styles.formBLockText}>
-                    Отправляя сообщение, я даю согласие на обработку своих персональных данных в соответствии с <a
-                    className={styles.formBlockLink}
-                    href="https://www.cdek.ru/storage/source/%D0%94%D0%BE%D0%BA%D1%83%D0%BC%D0%B5%D0%BD%D1%82%D1%8B/%D0%9F%D0%BE%D0%BB%D0%B8%D1%82%D0%B8%D0%BA%D0%B0/%D0%9F%D0%BE%D0%BB%D0%B8%D1%82%D0%B8%D0%BA%D0%B0_%D0%B2_%D0%BE%D1%82%D0%BD%D0%BE%D1%88%D0%B5%D0%BD%D0%B8%D0%B8_%D0%BE%D0%B1%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%BA%D0%B8_%D0%9F%D0%94%D0%BD_%D0%BA%D0%BB%D0%B8%D0%B5%D0%BD%D1%82%D0%BE%D0%B2_01_09_22.pdf">политикой
-                    конфиденциальности</a>.
-                </div>
             </div>
         </article>
     )
