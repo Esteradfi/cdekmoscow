@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.180e908b.css",
-    "main.js": "/static/js/main.ad6bb3c4.js",
+    "main.css": "/static/css/main.ee016560.css",
+    "main.js": "/static/js/main.4678cd28.js",
     "static/media/cdek-logo.jpg": "/static/media/cdek-logo.e4fe0f9c6f8bc047a32a.jpg",
     "static/media/background.png": "/static/media/background.e2b04b083f42370d32ee.png",
     "static/media/roboto-all-400-normal.woff": "/static/media/roboto-all-400-normal.c5d001fa922fa66a147f.woff",
@@ -26,13 +26,14 @@
     "static/media/arrow-right.svg": "/static/media/arrow-right.7f794c9f8fb61acf8c71a7ffee099789.svg",
     "static/media/preloader.svg": "/static/media/preloader.c7fb60a2f3090c691dcd065eb3d3f521.svg",
     "static/media/burger.svg": "/static/media/burger.d187d7b6fdf71d1ae3d044fb191ba9bb.svg",
+    "static/media/close-green.svg": "/static/media/close-green.7b17d0ae78cad63c2cc799c3db3abbae.svg",
     "static/media/close.svg": "/static/media/close.4142a4c4da81aa532dbf96d1ff569509.svg",
     "static/media/switch-points.svg": "/static/media/switch-points.cce79abd748c17877b0dfd181eedf367.svg",
-    "main.180e908b.css.map": "/static/css/main.180e908b.css.map",
-    "main.ad6bb3c4.js.map": "/static/js/main.ad6bb3c4.js.map"
+    "main.ee016560.css.map": "/static/css/main.ee016560.css.map",
+    "main.4678cd28.js.map": "/static/js/main.4678cd28.js.map"
   },
   "entrypoints": [
-    "static/css/main.180e908b.css",
-    "static/js/main.ad6bb3c4.js"
+    "static/css/main.ee016560.css",
+    "static/js/main.4678cd28.js"
   ]
 }
